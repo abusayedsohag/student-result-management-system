@@ -1,6 +1,22 @@
-import React from 'react';
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { AuthProvider } from '../../Provider/AuthContext';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Navbar = () => {
+
+    const {user, signOutme } = useContext(AuthProvider)
+
+    const handleSignOut = () => {
+        signOutme()
+            .then(res => {
+                toast('Successfully Logout')
+            })
+            .catch(error => {
+                toast('Something Error')
+            })
+    }
+
     return (
         <div>
             <div className="navbar bg-base-100 shadow-sm">
@@ -9,28 +25,38 @@ const Navbar = () => {
                 </div>
                 <div className="flex-none">
                     <div className="dropdown dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img
-                                    alt="Tailwind CSS Navbar component"
-                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
-                            </div>
-                        </div>
-                        <ul
-                            tabIndex={0}
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Upload Result</a></li>
-                            <li><a>Logout</a></li>
-                        </ul>
+                        {
+                            user ?
+                                <>
+                                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img
+                                                alt="Tailwind CSS Navbar component"
+                                                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
+                                        </div>
+                                    </div>
+                                    <ul
+                                        tabIndex={0}
+                                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                                        <li>
+                                            <a className="justify-between">
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li><Link to={'/upload-result'}>Upload Result</Link></li>
+                                        <li><button onClick={handleSignOut}>Log Out</button></li>
+                                    </ul>
+                                </> :
+                                <>
+                                    <div>
+                                        <Link to={"/login"} className='btn'>Admin</Link>
+                                    </div>
+                                </>
+                        }
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

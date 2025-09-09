@@ -9,8 +9,6 @@ const Form = () => {
         return navi("/result");
     }
 
-
-
     return (
         <div className='w-1/2 mx-auto'>
             <div className="p-6 space-y-6">
