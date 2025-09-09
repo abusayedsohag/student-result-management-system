@@ -1,10 +1,11 @@
 import React from 'react';
 import Form from '../Components/Form/Form';
+import Navbar from '../Components/Navbar/Navbar';
 
 const Home = () => {
     return (
         <div>
-            {/* <h1 className='text-2xl'>Hello World</h1> */}
+            <Navbar></Navbar>
             <Form></Form>
         </div>
     );

@@ -1,12 +1,30 @@
-import React from 'react';
+import { Link } from "react-router-dom";
+
 
 const Result = () => {
+
+    const handleDownload = () => {
+
+    };
+
     return (
-        <div className='w-11/12 mx-auto'>
-            <div className='space-y-8'>
+        <div className=''>
+
+            <div className='text-center'>
+                <h1 className='text-4xl font-bold'>BTEB Individual Results</h1>
+                <p>Check your diploma and polytechnic results instantly by roll number</p>
+                <div>
+                    <Link to={"/"} className='btn'>Search Again</Link>
+                    <button onClick={handleDownload} className='btn'>Print</button>
+
+                </div>
+            </div>
+
+            {/* result content */}
+            <div id='pdf-content' className='space-y-8 max-w-2xl mx-auto bg-[#1D232A]'>
                 <table className='table table-zebra'>
                     <thead>
-                        <tr className='bg-green-500'>
+                        <tr className='bg-[#00C950]'>
                             <th colSpan={4}>
                                 Student Information Summary
                             </th>
@@ -41,16 +59,18 @@ const Result = () => {
                             <td>Result</td>
                             <td colSpan={3} className='p-0'>
                                 <table className='w-full'>
-                                    <tr>
-                                        <td>3.51</td>
-                                        <td>3.52</td>
-                                        <td>3.53</td>
-                                        <td>3.54</td>
-                                        <td>3.55</td>
-                                        <td>3.56</td>
-                                        <td>3.57</td>
-                                        <td>3.58</td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>3.51</td>
+                                            <td>3.52</td>
+                                            <td>3.53</td>
+                                            <td>3.54</td>
+                                            <td>3.55</td>
+                                            <td>3.56</td>
+                                            <td>3.57</td>
+                                            <td>3.58</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
 
                             </td>
@@ -77,19 +97,21 @@ const Result = () => {
 
                 <table className='table table-zebra'>
                     <thead className=''>
-                        <tr className='bg-green-500'>
+                        <tr className='bg-[#00C950]'>
                             <th className='w-1/12'>Code</th>
                             <th className='w-4/12' colSpan={2}>Subject</th>
                             <th className='p-0 w-full'>
                                 <table className='w-full'>
-                                    <tr>
-                                        <td>Theory</td>
-                                        <td>Grade</td>
-                                        <td>Practical</td>
-                                        <td>Grade</td>
-                                        <td>Total</td>
-                                        <td>Grade</td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Theory</td>
+                                            <td>Grade</td>
+                                            <td>Practical</td>
+                                            <td>Grade</td>
+                                            <td>Total</td>
+                                            <td>Grade</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </th>
                         </tr>
@@ -100,14 +122,16 @@ const Result = () => {
                             <th colSpan={2}>Subject</th>
                             <th className='p-0 w-full'>
                                 <table className='w-full'>
-                                    <tr>
-                                        <td>Theory</td>
-                                        <td>Grade</td>
-                                        <td>Practical</td>
-                                        <td>Grade</td>
-                                        <td>Total</td>
-                                        <td>Grade</td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Theory</td>
+                                            <td>Grade</td>
+                                            <td>Practical</td>
+                                            <td>Grade</td>
+                                            <td>Total</td>
+                                            <td>Grade</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </th>
                         </tr>
@@ -116,14 +140,16 @@ const Result = () => {
                             <th colSpan={2}>Subject</th>
                             <th className='p-0 w-full'>
                                 <table className='w-full'>
-                                    <tr>
-                                        <td>Theory</td>
-                                        <td>Grade</td>
-                                        <td>Practical</td>
-                                        <td>Grade</td>
-                                        <td>Total</td>
-                                        <td>Grade</td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Theory</td>
+                                            <td>Grade</td>
+                                            <td>Practical</td>
+                                            <td>Grade</td>
+                                            <td>Total</td>
+                                            <td>Grade</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </th>
                         </tr>
@@ -132,14 +158,16 @@ const Result = () => {
                             <th colSpan={2}>Subject</th>
                             <th className='p-0 w-full'>
                                 <table className='w-full'>
-                                    <tr>
-                                        <td>Theory</td>
-                                        <td>Grade</td>
-                                        <td>Practical</td>
-                                        <td>Grade</td>
-                                        <td>Total</td>
-                                        <td>Grade</td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Theory</td>
+                                            <td>Grade</td>
+                                            <td>Practical</td>
+                                            <td>Grade</td>
+                                            <td>Total</td>
+                                            <td>Grade</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </th>
                         </tr>
@@ -148,14 +176,16 @@ const Result = () => {
                             <th colSpan={2}>Subject</th>
                             <th className='p-0 w-full'>
                                 <table className='w-full'>
-                                    <tr>
-                                        <td>Theory</td>
-                                        <td>Grade</td>
-                                        <td>Practical</td>
-                                        <td>Grade</td>
-                                        <td>Total</td>
-                                        <td>Grade</td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Theory</td>
+                                            <td>Grade</td>
+                                            <td>Practical</td>
+                                            <td>Grade</td>
+                                            <td>Total</td>
+                                            <td>Grade</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </th>
                         </tr>
@@ -164,23 +194,23 @@ const Result = () => {
                             <th colSpan={2}>Subject</th>
                             <th className='p-0 w-full'>
                                 <table className='w-full'>
-                                    <tr>
-                                        <td>Theory</td>
-                                        <td>Grade</td>
-                                        <td>Practical</td>
-                                        <td>Grade</td>
-                                        <td>Total</td>
-                                        <td>Grade</td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Theory</td>
+                                            <td>Grade</td>
+                                            <td>Practical</td>
+                                            <td>Grade</td>
+                                            <td>Total</td>
+                                            <td>Grade</td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </th>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div>
-                Subject info
-            </div>
+
         </div>
     );
 };

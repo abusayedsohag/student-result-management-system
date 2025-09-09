@@ -1,10 +1,12 @@
 import React from 'react';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const Form = () => {
 
+    const navi = useNavigate()
+
     const Result = () => {
-        return <Navigate to="/result" />;
+        return navi("/result");
     }
 
 
@@ -40,7 +42,7 @@ const Form = () => {
                         <label className="label">Roll</label>
                         <input type="number" className="input w-full" placeholder="Roll" required />
 
-                        <Link to="/result"><input type="submit" className='btn btn-neutral mt-4' value="Result" /></Link>
+                        <input type="submit" className='btn btn-neutral mt-4' value="Result" />
                     </fieldset>
                 </form>
             </div>
