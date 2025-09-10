@@ -1,0 +1,43 @@
+{
+  "diploma_disciplines": [
+    {
+      "name": "Diploma In Engineering",
+      "departments": [
+        "Civil Technology",
+        "Electrical Technology",
+        "Computer Science and Technology",
+        "Mechanical Technology",
+        "Electronics Technology",
+        "Electro-Medical Technology",
+        "Power Technology"
+      ]
+    },
+    {
+      "name": "Diploma In Textile Engineering",
+      "departments": [
+        "Yarn Manufacturing",
+        "Fabric Manufacturing",
+        "Wet Processing Technology",
+        "Apparel Manufacturing"
+      ]
+    },
+    {
+      "name": "Diploma In Agriculture",
+      "departments": [
+        "Agronomy",
+        "Horticulture",
+        "Livestock Management",
+        "Fisheries"
+      ]
+    },
+    {
+      "name": "Diploma In Commerce",
+      "departments": [
+        "Business Management",
+        "Accounting",
+        "Finance",
+        "Marketing"
+      ]
+    }
+  ]
+}
