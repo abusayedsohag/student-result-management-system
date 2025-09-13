@@ -8,7 +8,7 @@ import Layout from "../Layouts/Layout"
 import UploadResult from "../Components/Upload/UploadResult";
 import PrivateRoute from "../Router/PrivateRoute"
 import Single from "../Components/Upload/Single";
-import Multiple from "../Components/Upload/Multiple";
+import Upload from "../Components/Upload/Upload";
 
 const router = createBrowserRouter([
     {
@@ -30,16 +30,14 @@ const router = createBrowserRouter([
             {
                 path: '/upload-result',
                 element: <PrivateRoute><UploadResult></UploadResult></PrivateRoute>,
-                children: [
-                    {
-                        path: '/upload-result',
-                        element: <Single></Single>,
-                    },
-                    {
-                        path: '/upload-result/multiple-result',
-                        element: <Multiple></Multiple>,
-                    },
-                ]
+            },
+            {
+                path: '/edit',
+                element: <Single></Single>,
+            },
+            {
+                path: '/add',
+                element: <Upload></Upload>,
             },
         ]
     },

@@ -1,30 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MainContext } from '../../Provider/Context';
-import dept from "../../assets/info/type.json"
 import { toast } from 'react-toastify';
 
 const Form = () => {
 
     const navi = useNavigate()
-    const { searchinfo , result} = useContext(MainContext);
+    const { searchinfo, result, student } = useContext(MainContext);
 
-    const category = dept.diploma_disciplines.map(data => data.name)
-
+    // const category = dept.diploma_disciplines.map(data => data.name)
+    // const category = student.map(data => data.course_name);
+    const category = [...new Set(student.map(data => data.course_name))];
+    const regulation = [...new Set(student.map(data => data.regulation))].sort((a, b) => a - b);
 
     const Result = (e) => {
         e.preventDefault();
         const form = e.target;
         const roll = form.roll.value;
-        const exam = form.exam.value;
+        const course = form.course.value;
+        const regulation = form.regulation.value;
 
-        console.log(exam);
-        searchinfo(roll)
+        const result = searchinfo(course, regulation, roll)
 
-        if (result === 401) {
-            toast("Information Not Currect")
+        if (!result) {
+            toast("Information Not Correct");
         } else {
-            navi("/result");
+            // navi("/result");
+            navi(`/result?course=${course}&regulation=${regulation}&roll=${roll}`);
         }
     }
 
@@ -36,20 +38,23 @@ const Form = () => {
                         <legend className="fieldset-legend text-center text-3xl">Diploma Result</legend>
 
                         <label className='label'>Exam</label>
-                        <select className='select w-full' name='exam' required>
+                        <select className='select w-full' name='course' required>
                             <option value="" selected disabled>Select Exam</option>
                             {
-                                category.map(data => <>
-                                    <option key={data} value={data}>{data}</option>
+                                category.map((data) => <>
+                                    <option key={data.index} value={data}>{data}</option>
                                 </>)
                             }
                         </select>
 
                         <label className='label'>Regulation</label>
-                        <select className='select w-full' required>
+                        <select name="regulation" className='select w-full' required>
                             <option value="" selected disabled>Select Regulation</option>
-                            <option value="2016">2016</option>
-                            <option value="2022">2022</option>
+                            {
+                                regulation.map((data) => <>
+                                    <option key={data.index} value={data}>{data}</option>
+                                </>)
+                            }
                         </select>
 
                         <label className="label">Roll</label>

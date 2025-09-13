@@ -1,64 +1,231 @@
-import React from 'react';
+import { useContext, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { MainContext } from "../../Provider/Context";
 
-const Single = () => {
+const Result = () => {
+
+    const { result, searchinfo } = useContext(MainContext);
+    const [semister, setSemister] = useState("1st");
+    const location = useLocation()
 
 
+    const semesterInfo = result?.semesters.map(data => data.semester_name)
+    const semesterResult = result?.semesters.map(data => data.result)
+    const findSemi = result?.semesters.find(data => data.semester_name === semister)
+    const subjectInfo = findSemi?.subjects
 
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const course = params.get("course");
+        const regulation = params.get("regulation");
+        const roll = params.get("roll");
+
+        if (!result && course && regulation && roll) {
+            searchinfo(course, regulation, roll); // ✅ refetch on refresh
+        }
+    }, [location.search, result, searchinfo]);
+
+    // const student_Info = result?.personal_data;
+    // const [semister, setSemister] = useState("1st")
+
+    // // need department data from json
+    // const departInfo = subjectdata.departments.map(data => data.name);
+
+    // // Match Department from student data
+    // const findDept = subjectdata.departments.find(dept => dept.name === student_Info?.department)
+
+    // // Need semester data from json
+    // const semesterInfo = findDept?.semesters.map(sem => sem.semester_name);
+
+    // // Match Semister data from data
+    // const findSemis = findDept?.semesters.find(semis => semis?.semester_name === semister)
+
+    // // Need Subject data from json
+    // const subjectInfo = findSemis?.subjects.map(data => data)
+
+    // // console.log(subjectInfo);
+
+
+    // // console.log(departInfo)
+    // // console.log(semesterInfo)
+    // // console.log(semisterInfo);
+
+    const handleSubject = (semester) => {
+        setSemister(semester)
+    }
+
+
+    const handleDownload = () => {
+
+    };
 
     return (
-        <div>
-            <div className='w-11/12 mx-auto'>
-                <div className="p-6 space-y-6">
-                    <form className="">
-                        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4 grid grid-cols-2">
-                            <legend className="fieldset-legend text-center text-3xl">Upload Diploma Result</legend>
+        <div className=''>
 
-                            <div>
-                                <label className='label'>Exam</label>
-                                <select className='select w-full' required>
-                                    <option value="" selected disabled>Select Exam</option>
-                                    <option value="DIPLOMA IN ENGINEERING" selected="">Diploma In Engineering</option>
-                                    <option value="DIPLOMA IN TEXTILE ENGINEERING">Diploma In Textile Engineering</option>
-                                    <option value="DIPLOMA IN AGRICULTURE">Diploma In Agriculture</option>
-                                    <option value="DIPLOMA IN FISHERIES">Diploma In Fisheries</option>
-                                    <option value="DIPLOMA IN FORESTRY">Diploma In Forestry</option>
-                                    <option value="DIPLOMA IN COMMERCE">Diploma In Commerce</option>
-                                </select>
-                            </div>
+            <div className='text-center'>
+                <h1 className='text-4xl font-bold'>BTEB Individual Results</h1>
+                <p>Check your diploma and polytechnic results instantly by roll number</p>
+                <div>
+                    <Link to={"/upload-result"} className='btn'>Search Again</Link>
+                    <button onClick={handleDownload} className='btn'>Print</button>
 
-                            <div>
-                                <label className='label'>Regulation</label>
-                                <select className='select w-full' required>
-                                    <option value="" selected disabled>Select Regulation</option>
-                                    <option value="2016">2016</option>
-                                    <option value="2022">2022</option>
-                                </select>
-                            </div>
-
-                            <div>
-                                <label className="label">Roll</label>
-                                <input type="number" className="input w-full" placeholder="Roll" required />
-                            </div>
-
-                            <div>
-                                <label className="label">Registration</label>
-                                <input type="number" className="input w-full" placeholder="Registration" required />
-                            </div>
-
-                            <div>
-                                <label className="label">Department</label>
-                                <input type="number" className="input w-full" placeholder="Department" required />
-                            </div>
-
-                            <div>
-                                <input type="submit" className='btn btn-neutral mt-4' value="Verify" />
-                            </div>
-                        </fieldset>
-                    </form>
                 </div>
             </div>
+
+            {/* result content */}
+            {
+                result ?
+                    <>
+                        <div id='pdf-content' className='space-y-8 max-w-2xl mx-auto bg-[#1D232A]'>
+                            <table className='table table-zebra'>
+                                <thead>
+                                    <tr className='bg-[#00C950]'>
+                                        <th colSpan={4}>
+                                            Student Information Summary
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Roll No</td>
+                                        <td>{result.roll}</td>
+                                        <td>Registration No</td>
+                                        <td>{result.registration}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name of Student</td>
+                                        <td>{result.student_name}</td>
+                                        <td>Date of Birth</td>
+                                        <td>{result.date_of_birth}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Father's Name</td>
+                                        <td>{result.father_name}</td>
+                                        <td>Mother's Name</td>
+                                        <td>{result.mother_name}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Department</td>
+                                        <td>{result.department}</td>
+                                        <td>Session: {result.session}</td>
+                                        <td>Gender: {result.gender}</td>
+                                    </tr>
+                                    <tr className=''>
+                                        <td>Result</td>
+                                        <td colSpan={3} className='p-0'>
+                                            <table className='w-full'>
+                                                <tbody>
+                                                    <tr>
+                                                        {
+                                                            semesterResult.map((data, index) => <>
+                                                                <td key={index}>{data}</td>
+                                                            </>)
+                                                        }
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name of Institute</td>
+                                        <td colSpan={3}>{result.name_of_industry}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <h1 className='text-4xl font-semibold text-center'>Subject Information</h1>
+
+                            <div className='grid grid-cols-8'>
+                                {
+                                    semesterInfo?.map((data, index) => <>
+                                        <button key={index} onClick={() => handleSubject(data)} className="btn">{data}</button>
+                                    </>)
+                                }
+                            </div>
+
+                            {/* <table className='table table-zebra'>
+                                <thead className=''>
+                                    <tr className='bg-[#00C950]'>
+                                        <th className='w-1/12'>Code</th>
+                                        <th className='w-4/12' colSpan={2}>Subject</th>
+                                        <th className='p-0 w-full'>
+                                            <table className='w-full'>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Theory</td>
+                                                        <td>Practical</td>
+                                                        <td>Total</td>
+                                                        <td>Grade</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                        subjectInfo?.map((data) => (
+                                            <tr key={data.subject_code}>
+                                                <td>{data.subject_code}</td>
+                                                <td colSpan={2}>{data.subject_name}</td>
+                                                <td className="8/12">
+                                                    <table className='w-full'>
+                                                        <tbody>
+                                                            <tr className="w-full">
+                                                                <td><input className="input" type="number" name="theory-mark" value={data.theory_marks} /></td>
+                                                                <td><input className="input" type="number" name="theory-mark" value={data.practical_marks} /></td>
+                                                                <td><input className="input" type="number" name="theory-mark" value={data.total_marks} /></td>
+                                                                <td><input className="input" type="number" name="theory-mark" value={data.total_grade} /></td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        ))
+
+                                    }
+                                </tbody>
+                            </table> */}
+
+                            <div className="grid grid-cols-8 p-0.5">
+                                <div className="">Code</div>
+                                <div className="col-span-3">Subject</div>
+                                <div className="col-span-4 grid grid-cols-6">
+                                    <div className="">T_মোট</div>
+                                    <div className="">T_প্রাপ্ত</div>
+                                    <div className="">P_মোট</div>
+                                    <div className="">P_প্রাপ্ত</div>
+                                    <div className="">মোট মার্ক</div>
+                                    <div className="">মোট স্কোর</div>
+                                </div>
+                            </div>
+                            {
+                                subjectInfo?.map(data => <>
+                                    <div className="grid grid-cols-8 p-0.5">
+                                        <div className="">{data.subject_code}</div>
+                                        <div className="col-span-3">{data.subject_name}</div>
+                                        <div className="col-span-4 grid grid-cols-6">
+                                            <div className="input"><input type="text" name="" id="" value={data.theory_marks} /></div>
+                                            <div className="input"><input type="text" name="" id="" value={data.theory_marks} /></div>
+                                            <div className="input"><input type="text" name="" id="" value={data.theory_marks} /></div>
+                                            <div className="input"><input type="text" name="" id="" value={data.theory_marks} /></div>
+                                            <div className="input"><input type="text" name="" id="" value={data.theory_marks} /></div>
+                                            <div className="input"><input type="text" name="" id="" value={data.theory_marks} /></div>
+                                        </div>
+                                    </div>
+                                </>)
+                            }
+                        </div>
+                    </> :
+                    <>
+                        <div className="w-1/2 h-60 mx-auto flex justify-center items-center">
+                            <h1 className="text-4xl font-black text-center">Result Not Found</h1>
+                        </div>
+                    </>
+            }
+
         </div>
     );
 };
 
-export default Single;
+export default Result;

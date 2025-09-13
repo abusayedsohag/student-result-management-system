@@ -1,0 +1,1551 @@
+[
+    {
+        "course_name": "Diploma in Engineering",
+        "departments": [
+            {
+                "name": "Civil Technology",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "21011",
+                                "subject_name": "Engineering Drawing"
+                            },
+                            {
+                                "subject_code": "25711",
+                                "subject_name": "Bangla-1"
+                            },
+                            {
+                                "subject_code": "25712",
+                                "subject_name": "English-1"
+                            },
+                            {
+                                "subject_code": "25811",
+                                "subject_name": "Social Science"
+                            },
+                            {
+                                "subject_code": "25911",
+                                "subject_name": "Mathematics-1"
+                            },
+                            {
+                                "subject_code": "25913",
+                                "subject_name": "Chemistry"
+                            },
+                            {
+                                "subject_code": "26411",
+                                "subject_name": "Civil Engineering Materials"
+                            },
+                            {
+                                "subject_code": "26711",
+                                "subject_name": "Basic Electricity"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "25721",
+                                "subject_name": "Bangla-2"
+                            },
+                            {
+                                "subject_code": "25722",
+                                "subject_name": "English-2"
+                            },
+                            {
+                                "subject_code": "25812",
+                                "subject_name": "Physical Education & Life Skills Development"
+                            },
+                            {
+                                "subject_code": "25912",
+                                "subject_name": "Physics-1"
+                            },
+                            {
+                                "subject_code": "25921",
+                                "subject_name": "Mathematics-2"
+                            },
+                            {
+                                "subject_code": "26421",
+                                "subject_name": "Civil Engineering Drawing"
+                            },
+                            {
+                                "subject_code": "26811",
+                                "subject_name": "Basic Electronics"
+                            },
+                            {
+                                "subject_code": "27011",
+                                "subject_name": "Basic Workshop Practice"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "25731",
+                                "subject_name": "Business Communication"
+                            },
+                            {
+                                "subject_code": "25912",
+                                "subject_name": "Physics-2"
+                            },
+                            {
+                                "subject_code": "25931",
+                                "subject_name": "Mathematics-3"
+                            },
+                            {
+                                "subject_code": "26431",
+                                "subject_name": "Structural Mechanics"
+                            },
+                            {
+                                "subject_code": "26432",
+                                "subject_name": "Surveying-1"
+                            },
+                            {
+                                "subject_code": "26433",
+                                "subject_name": "Construction Process-1"
+                            },
+                            {
+                                "subject_code": "26611",
+                                "subject_name": "Computer Office Application"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "4th",
+                        "subjects": [
+                            {
+                                "subject_code": "25841",
+                                "subject_name": "Accounting"
+                            },
+                            {
+                                "subject_code": "26422",
+                                "subject_name": "Construction Process-2"
+                            },
+                            {
+                                "subject_code": "26441",
+                                "subject_name": "Estimating & Costing-1"
+                            },
+                            {
+                                "subject_code": "26442",
+                                "subject_name": "Civil CAD-1"
+                            },
+                            {
+                                "subject_code": "26443",
+                                "subject_name": "Surveying-2"
+                            },
+                            {
+                                "subject_code": "26511",
+                                "subject_name": "Geotechnical Engineering"
+                            },
+                            {
+                                "subject_code": "26512",
+                                "subject_name": "Hydrology"
+                            },
+                            {
+                                "subject_code": "27012",
+                                "subject_name": "Wood Workshop Practice"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "5th",
+                        "subjects": [
+                            {
+                                "subject_code": "25851",
+                                "subject_name": "Industrial Management"
+                            },
+                            {
+                                "subject_code": "26451",
+                                "subject_name": "Foundation Engineering"
+                            },
+                            {
+                                "subject_code": "26452",
+                                "subject_name": "Civil CAD-2"
+                            },
+                            {
+                                "subject_code": "26453",
+                                "subject_name": "Surveying-3"
+                            },
+                            {
+                                "subject_code": "26454",
+                                "subject_name": "Theory of Structure"
+                            },
+                            {
+                                "subject_code": "26513",
+                                "subject_name": "Water Supply Engineering"
+                            },
+                            {
+                                "subject_code": "26514",
+                                "subject_name": "Hydraulics"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "6th",
+                        "subjects": [
+                            {
+                                "subject_code": "26521",
+                                "subject_name": "Water Resources Engineering"
+                            },
+                            {
+                                "subject_code": "26461",
+                                "subject_name": "Advance Surveying"
+                            },
+                            {
+                                "subject_code": "26522",
+                                "subject_name": "Transportation Engineering-1"
+                            },
+                            {
+                                "subject_code": "26462",
+                                "subject_name": "Design of Structure-1"
+                            },
+                            {
+                                "subject_code": "26463",
+                                "subject_name": "Steel Structures"
+                            },
+                            {
+                                "subject_code": "26464",
+                                "subject_name": "Advanced Construction"
+                            },
+                            {
+                                "subject_code": "25941",
+                                "subject_name": "Environmental Studies"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "7th",
+                        "subjects": [
+                            {
+                                "subject_code": "26531",
+                                "subject_name": "Transportation Engineering-2"
+                            },
+                            {
+                                "subject_code": "26471",
+                                "subject_name": "Design of Structure-2"
+                            },
+                            {
+                                "subject_code": "26472",
+                                "subject_name": "Estimating & Costing-2"
+                            },
+                            {
+                                "subject_code": "26532",
+                                "subject_name": "Irrigation & Dam Engineering"
+                            },
+                            {
+                                "subject_code": "26001",
+                                "subject_name": "Project"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "8th",
+                        "subjects": [
+                            {
+                                "subject_code": "25861",
+                                "subject_name": "Industrial Attachment"
+                            },
+                            {
+                                "subject_code": "26002",
+                                "subject_name": "Thesis"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Electrical Technology",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "21011",
+                                "subject_name": "Engineering Drawing"
+                            },
+                            {
+                                "subject_code": "25711",
+                                "subject_name": "Bangla-1"
+                            },
+                            {
+                                "subject_code": "25712",
+                                "subject_name": "English-1"
+                            },
+                            {
+                                "subject_code": "25811",
+                                "subject_name": "Social Science"
+                            },
+                            {
+                                "subject_code": "25911",
+                                "subject_name": "Mathematics-1"
+                            },
+                            {
+                                "subject_code": "25912",
+                                "subject_name": "Physics-1"
+                            },
+                            {
+                                "subject_code": "26711",
+                                "subject_name": "Basic Electricity"
+                            },
+                            {
+                                "subject_code": "27011",
+                                "subject_name": "Workshop Practice"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "25721",
+                                "subject_name": "Bangla-2"
+                            },
+                            {
+                                "subject_code": "25722",
+                                "subject_name": "English-2"
+                            },
+                            {
+                                "subject_code": "25812",
+                                "subject_name": "Physical Education & Life Skills Development"
+                            },
+                            {
+                                "subject_code": "25921",
+                                "subject_name": "Mathematics-2"
+                            },
+                            {
+                                "subject_code": "25922",
+                                "subject_name": "Physics-2"
+                            },
+                            {
+                                "subject_code": "26721",
+                                "subject_name": "Electrical Circuits-1"
+                            },
+                            {
+                                "subject_code": "26811",
+                                "subject_name": "Basic Electronics"
+                            },
+                            {
+                                "subject_code": "26722",
+                                "subject_name": "Electrical Installation"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "25731",
+                                "subject_name": "Business Communication"
+                            },
+                            {
+                                "subject_code": "25931",
+                                "subject_name": "Mathematics-3"
+                            },
+                            {
+                                "subject_code": "26731",
+                                "subject_name": "Electrical Circuits-2"
+                            },
+                            {
+                                "subject_code": "26732",
+                                "subject_name": "Electrical Machines-1 (DC)"
+                            },
+                            {
+                                "subject_code": "26812",
+                                "subject_name": "Digital Electronics"
+                            },
+                            {
+                                "subject_code": "26733",
+                                "subject_name": "Power System-1"
+                            },
+                            {
+                                "subject_code": "26611",
+                                "subject_name": "Computer Office Application"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "4th",
+                        "subjects": [
+                            {
+                                "subject_code": "25841",
+                                "subject_name": "Accounting"
+                            },
+                            {
+                                "subject_code": "26741",
+                                "subject_name": "Electrical Machines-2 (AC)"
+                            },
+                            {
+                                "subject_code": "26742",
+                                "subject_name": "Power System-2"
+                            },
+                            {
+                                "subject_code": "26813",
+                                "subject_name": "Industrial Electronics"
+                            },
+                            {
+                                "subject_code": "26743",
+                                "subject_name": "Control System"
+                            },
+                            {
+                                "subject_code": "26744",
+                                "subject_name": "Electrical Measurement"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "5th",
+                        "subjects": [
+                            {
+                                "subject_code": "25851",
+                                "subject_name": "Industrial Management"
+                            },
+                            {
+                                "subject_code": "26751",
+                                "subject_name": "Generation of Electrical Power"
+                            },
+                            {
+                                "subject_code": "26752",
+                                "subject_name": "Transmission and Distribution-1"
+                            },
+                            {
+                                "subject_code": "26753",
+                                "subject_name": "Electrical Appliances"
+                            },
+                            {
+                                "subject_code": "26754",
+                                "subject_name": "Switchgear and Protection"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "6th",
+                        "subjects": [
+                            {
+                                "subject_code": "25941",
+                                "subject_name": "Environmental Studies"
+                            },
+                            {
+                                "subject_code": "26761",
+                                "subject_name": "Transmission and Distribution-2"
+                            },
+                            {
+                                "subject_code": "26762",
+                                "subject_name": "Electrical Maintenance"
+                            },
+                            {
+                                "subject_code": "26763",
+                                "subject_name": "Renewable Energy"
+                            },
+                            {
+                                "subject_code": "26764",
+                                "subject_name": "Electrical Machine Design"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "7th",
+                        "subjects": [
+                            {
+                                "subject_code": "26641",
+                                "subject_name": "Programming in C"
+                            },
+                            {
+                                "subject_code": "26771",
+                                "subject_name": "Industrial Automation & PLC"
+                            },
+                            {
+                                "subject_code": "26772",
+                                "subject_name": "High Voltage Engineering"
+                            },
+                            {
+                                "subject_code": "26001",
+                                "subject_name": "Project"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "8th",
+                        "subjects": [
+                            {
+                                "subject_code": "25861",
+                                "subject_name": "Industrial Attachment"
+                            },
+                            {
+                                "subject_code": "26002",
+                                "subject_name": "Thesis"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Computer Science and Technology",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "21011",
+                                "subject_name": "Engineering Drawing"
+                            },
+                            {
+                                "subject_code": "25711",
+                                "subject_name": "Bangla-1"
+                            },
+                            {
+                                "subject_code": "25712",
+                                "subject_name": "English-1"
+                            },
+                            {
+                                "subject_code": "25811",
+                                "subject_name": "Social Science"
+                            },
+                            {
+                                "subject_code": "25911",
+                                "subject_name": "Mathematics-1"
+                            },
+                            {
+                                "subject_code": "25912",
+                                "subject_name": "Physics-1"
+                            },
+                            {
+                                "subject_code": "26711",
+                                "subject_name": "Basic Electricity"
+                            },
+                            {
+                                "subject_code": "27011",
+                                "subject_name": "Workshop Practice"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "25721",
+                                "subject_name": "Bangla-2"
+                            },
+                            {
+                                "subject_code": "25722",
+                                "subject_name": "English-2"
+                            },
+                            {
+                                "subject_code": "25812",
+                                "subject_name": "Physical Education & Life Skills Development"
+                            },
+                            {
+                                "subject_code": "25921",
+                                "subject_name": "Mathematics-2"
+                            },
+                            {
+                                "subject_code": "25922",
+                                "subject_name": "Physics-2"
+                            },
+                            {
+                                "subject_code": "25913",
+                                "subject_name": "Chemistry"
+                            },
+                            {
+                                "subject_code": "26621",
+                                "subject_name": "Programming in C"
+                            },
+                            {
+                                "subject_code": "26622",
+                                "subject_name": "Data Structure"
+                            },
+                            {
+                                "subject_code": "26811",
+                                "subject_name": "Basic Electronics"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "25731",
+                                "subject_name": "Business Communication"
+                            },
+                            {
+                                "subject_code": "25931",
+                                "subject_name": "Mathematics-3"
+                            },
+                            {
+                                "subject_code": "26631",
+                                "subject_name": "Object Oriented Programming"
+                            },
+                            {
+                                "subject_code": "26632",
+                                "subject_name": "Computer Hardware & Maintenance"
+                            },
+                            {
+                                "subject_code": "26633",
+                                "subject_name": "Database Management Systems"
+                            },
+                            {
+                                "subject_code": "26634",
+                                "subject_name": "Computer Networks"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "4th",
+                        "subjects": [
+                            {
+                                "subject_code": "25841",
+                                "subject_name": "Accounting"
+                            },
+                            {
+                                "subject_code": "26641",
+                                "subject_name": "Web Design and Development"
+                            },
+                            {
+                                "subject_code": "26642",
+                                "subject_name": "Operating Systems"
+                            },
+                            {
+                                "subject_code": "26643",
+                                "subject_name": "Software Engineering"
+                            },
+                            {
+                                "subject_code": "26644",
+                                "subject_name": "Computer Graphics"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "5th",
+                        "subjects": [
+                            {
+                                "subject_code": "25851",
+                                "subject_name": "Industrial Management"
+                            },
+                            {
+                                "subject_code": "26651",
+                                "subject_name": "Data Communication"
+                            },
+                            {
+                                "subject_code": "26652",
+                                "subject_name": "Java Programming"
+                            },
+                            {
+                                "subject_code": "26653",
+                                "subject_name": "Computer Forensics"
+                            },
+                            {
+                                "subject_code": "26001",
+                                "subject_name": "Project"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "6th",
+                        "subjects": [
+                            {
+                                "subject_code": "25941",
+                                "subject_name": "Environmental Studies"
+                            },
+                            {
+                                "subject_code": "26661",
+                                "subject_name": "Mobile Application Development"
+                            },
+                            {
+                                "subject_code": "26662",
+                                "subject_name": "Artificial Intelligence"
+                            },
+                            {
+                                "subject_code": "26663",
+                                "subject_name": "Cyber Security"
+                            },
+                            {
+                                "subject_code": "26002",
+                                "subject_name": "Thesis"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Mechanical Technology",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "21011",
+                                "subject_name": "Engineering Drawing"
+                            },
+                            {
+                                "subject_code": "25711",
+                                "subject_name": "Bangla-1"
+                            },
+                            {
+                                "subject_code": "25712",
+                                "subject_name": "English-1"
+                            },
+                            {
+                                "subject_code": "25811",
+                                "subject_name": "Social Science"
+                            },
+                            {
+                                "subject_code": "25911",
+                                "subject_name": "Mathematics-1"
+                            },
+                            {
+                                "subject_code": "25912",
+                                "subject_name": "Physics-1"
+                            },
+                            {
+                                "subject_code": "26711",
+                                "subject_name": "Basic Electricity"
+                            },
+                            {
+                                "subject_code": "27011",
+                                "subject_name": "Workshop Practice"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "25721",
+                                "subject_name": "Bangla-2"
+                            },
+                            {
+                                "subject_code": "25722",
+                                "subject_name": "English-2"
+                            },
+                            {
+                                "subject_code": "25812",
+                                "subject_name": "Physical Education & Life Skills Development"
+                            },
+                            {
+                                "subject_code": "25921",
+                                "subject_name": "Mathematics-2"
+                            },
+                            {
+                                "subject_code": "25922",
+                                "subject_name": "Physics-2"
+                            },
+                            {
+                                "subject_code": "27021",
+                                "subject_name": "Mechanical Engineering Drawing"
+                            },
+                            {
+                                "subject_code": "27022",
+                                "subject_name": "Fluid Mechanics"
+                            },
+                            {
+                                "subject_code": "27023",
+                                "subject_name": "Materials Science"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "25731",
+                                "subject_name": "Business Communication"
+                            },
+                            {
+                                "subject_code": "25931",
+                                "subject_name": "Mathematics-3"
+                            },
+                            {
+                                "subject_code": "27031",
+                                "subject_name": "Thermodynamics"
+                            },
+                            {
+                                "subject_code": "27032",
+                                "subject_name": "Engineering Mechanics"
+                            },
+                            {
+                                "subject_code": "27033",
+                                "subject_name": "Workshop Technology-1"
+                            },
+                            {
+                                "subject_code": "27034",
+                                "subject_name": "Manufacturing Processes"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "4th",
+                        "subjects": [
+                            {
+                                "subject_code": "25841",
+                                "subject_name": "Accounting"
+                            },
+                            {
+                                "subject_code": "27041",
+                                "subject_name": "Heat Transfer"
+                            },
+                            {
+                                "subject_code": "27042",
+                                "subject_name": "Machine Design-1"
+                            },
+                            {
+                                "subject_code": "27043",
+                                "subject_name": "Workshop Technology-2"
+                            },
+                            {
+                                "subject_code": "27044",
+                                "subject_name": "Theory of Machines"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "5th",
+                        "subjects": [
+                            {
+                                "subject_code": "25851",
+                                "subject_name": "Industrial Management"
+                            },
+                            {
+                                "subject_code": "27051",
+                                "subject_name": "Industrial Engineering"
+                            },
+                            {
+                                "subject_code": "27052",
+                                "subject_name": "Machine Design-2"
+                            },
+                            {
+                                "subject_code": "27053",
+                                "subject_name": "Production Planning & Control"
+                            },
+                            {
+                                "subject_code": "26001",
+                                "subject_name": "Project"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "6th",
+                        "subjects": [
+                            {
+                                "subject_code": "25941",
+                                "subject_name": "Environmental Studies"
+                            },
+                            {
+                                "subject_code": "27061",
+                                "subject_name": "HVAC Systems"
+                            },
+                            {
+                                "subject_code": "27062",
+                                "subject_name": "Tool Engineering"
+                            },
+                            {
+                                "subject_code": "27063",
+                                "subject_name": "Maintenance Engineering"
+                            },
+                            {
+                                "subject_code": "26002",
+                                "subject_name": "Thesis"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Electronics Technology",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "21011",
+                                "subject_name": "Engineering Drawing"
+                            },
+                            {
+                                "subject_code": "25711",
+                                "subject_name": "Bangla-1"
+                            },
+                            {
+                                "subject_code": "25712",
+                                "subject_name": "English-1"
+                            },
+                            {
+                                "subject_code": "25811",
+                                "subject_name": "Social Science"
+                            },
+                            {
+                                "subject_code": "25911",
+                                "subject_name": "Mathematics-1"
+                            },
+                            {
+                                "subject_code": "25912",
+                                "subject_name": "Physics-1"
+                            },
+                            {
+                                "subject_code": "26711",
+                                "subject_name": "Basic Electricity"
+                            },
+                            {
+                                "subject_code": "27011",
+                                "subject_name": "Workshop Practice"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "25721",
+                                "subject_name": "Bangla-2"
+                            },
+                            {
+                                "subject_code": "25722",
+                                "subject_name": "English-2"
+                            },
+                            {
+                                "subject_code": "25812",
+                                "subject_name": "Physical Education & Life Skills Development"
+                            },
+                            {
+                                "subject_code": "25921",
+                                "subject_name": "Mathematics-2"
+                            },
+                            {
+                                "subject_code": "25922",
+                                "subject_name": "Physics-2"
+                            },
+                            {
+                                "subject_code": "26721",
+                                "subject_name": "Electrical Circuits-1"
+                            },
+                            {
+                                "subject_code": "26811",
+                                "subject_name": "Basic Electronics"
+                            },
+                            {
+                                "subject_code": "26722",
+                                "subject_name": "Electronic Components and Devices"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "25731",
+                                "subject_name": "Business Communication"
+                            },
+                            {
+                                "subject_code": "25931",
+                                "subject_name": "Mathematics-3"
+                            },
+                            {
+                                "subject_code": "26831",
+                                "subject_name": "Circuit Theory and Networks"
+                            },
+                            {
+                                "subject_code": "26832",
+                                "subject_name": "Solid State Electronics"
+                            },
+                            {
+                                "subject_code": "26833",
+                                "subject_name": "Digital Electronics"
+                            },
+                            {
+                                "subject_code": "26834",
+                                "subject_name": "Electromagnetic Fields and Waves"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "4th",
+                        "subjects": [
+                            {
+                                "subject_code": "25841",
+                                "subject_name": "Accounting"
+                            },
+                            {
+                                "subject_code": "26841",
+                                "subject_name": "Electronic Instrumentation"
+                            },
+                            {
+                                "subject_code": "26842",
+                                "subject_name": "Linear Integrated Circuits"
+                            },
+                            {
+                                "subject_code": "26843",
+                                "subject_name": "Microprocessor and Microcontroller"
+                            },
+                            {
+                                "subject_code": "26844",
+                                "subject_name": "Communication Engineering-1"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "5th",
+                        "subjects": [
+                            {
+                                "subject_code": "25851",
+                                "subject_name": "Industrial Management"
+                            },
+                            {
+                                "subject_code": "26851",
+                                "subject_name": "Power Electronics"
+                            },
+                            {
+                                "subject_code": "26852",
+                                "subject_name": "Communication Engineering-2"
+                            },
+                            {
+                                "subject_code": "26853",
+                                "subject_name": "Control Systems Engineering"
+                            },
+                            {
+                                "subject_code": "26001",
+                                "subject_name": "Project"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "6th",
+                        "subjects": [
+                            {
+                                "subject_code": "25941",
+                                "subject_name": "Environmental Studies"
+                            },
+                            {
+                                "subject_code": "26861",
+                                "subject_name": "Digital Signal Processing"
+                            },
+                            {
+                                "subject_code": "26862",
+                                "subject_name": "Broadcasting Engineering"
+                            },
+                            {
+                                "subject_code": "26863",
+                                "subject_name": "Optoelectronics and Fiber Optics"
+                            },
+                            {
+                                "subject_code": "26002",
+                                "subject_name": "Thesis"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "course_name": "Diploma in Textile Engineering",
+        "departments": [
+            {
+                "name": "Yarn Manufacturing",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "21111",
+                                "subject_name": "Textile Physics"
+                            },
+                            {
+                                "subject_code": "25911",
+                                "subject_name": "Mathematics-1"
+                            },
+                            {
+                                "subject_code": "25913",
+                                "subject_name": "Chemistry-1"
+                            },
+                            {
+                                "subject_code": "25712",
+                                "subject_name": "English"
+                            },
+                            {
+                                "subject_code": "25711",
+                                "subject_name": "Bangla"
+                            },
+                            {
+                                "subject_code": "25811",
+                                "subject_name": "Social Science"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "21121",
+                                "subject_name": "Textile Chemistry"
+                            },
+                            {
+                                "subject_code": "21122",
+                                "subject_name": "Fiber Science"
+                            },
+                            {
+                                "subject_code": "25921",
+                                "subject_name": "Mathematics-2"
+                            },
+                            {
+                                "subject_code": "25922",
+                                "subject_name": "Physics-2"
+                            },
+                            {
+                                "subject_code": "25812",
+                                "subject_name": "Physical Education & Life Skills Development"
+                            },
+                            {
+                                "subject_code": "25721",
+                                "subject_name": "Bangla-2"
+                            },
+                            {
+                                "subject_code": "25722",
+                                "subject_name": "English-2"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "21131",
+                                "subject_name": "Yarn Manufacturing Technology-1"
+                            },
+                            {
+                                "subject_code": "21132",
+                                "subject_name": "Textile Testing and Quality Control"
+                            },
+                            {
+                                "subject_code": "25931",
+                                "subject_name": "Mathematics-3"
+                            },
+                            {
+                                "subject_code": "21133",
+                                "subject_name": "Textile Machinery-1"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "4th",
+                        "subjects": [
+                            {
+                                "subject_code": "21141",
+                                "subject_name": "Yarn Manufacturing Technology-2"
+                            },
+                            {
+                                "subject_code": "21142",
+                                "subject_name": "Industrial Management"
+                            },
+                            {
+                                "subject_code": "21143",
+                                "subject_name": "Textile Machinery-2"
+                            },
+                            {
+                                "subject_code": "26611",
+                                "subject_name": "Computer Office Application"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Fabric Manufacturing",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "21111",
+                                "subject_name": "Textile Physics"
+                            },
+                            {
+                                "subject_code": "25911",
+                                "subject_name": "Mathematics-1"
+                            },
+                            {
+                                "subject_code": "25913",
+                                "subject_name": "Chemistry-1"
+                            },
+                            {
+                                "subject_code": "25712",
+                                "subject_name": "English"
+                            },
+                            {
+                                "subject_code": "25711",
+                                "subject_name": "Bangla"
+                            },
+                            {
+                                "subject_code": "25811",
+                                "subject_name": "Social Science"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "21121",
+                                "subject_name": "Textile Chemistry"
+                            },
+                            {
+                                "subject_code": "21122",
+                                "subject_name": "Fiber Science"
+                            },
+                            {
+                                "subject_code": "25921",
+                                "subject_name": "Mathematics-2"
+                            },
+                            {
+                                "subject_code": "25922",
+                                "subject_name": "Physics-2"
+                            },
+                            {
+                                "subject_code": "25812",
+                                "subject_name": "Physical Education & Life Skills Development"
+                            },
+                            {
+                                "subject_code": "25721",
+                                "subject_name": "Bangla-2"
+                            },
+                            {
+                                "subject_code": "25722",
+                                "subject_name": "English-2"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "21231",
+                                "subject_name": "Fabric Manufacturing Technology-1"
+                            },
+                            {
+                                "subject_code": "21132",
+                                "subject_name": "Textile Testing and Quality Control"
+                            },
+                            {
+                                "subject_code": "25931",
+                                "subject_name": "Mathematics-3"
+                            },
+                            {
+                                "subject_code": "21232",
+                                "subject_name": "Textile Machinery-1"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "4th",
+                        "subjects": [
+                            {
+                                "subject_code": "21241",
+                                "subject_name": "Fabric Manufacturing Technology-2"
+                            },
+                            {
+                                "subject_code": "21142",
+                                "subject_name": "Industrial Management"
+                            },
+                            {
+                                "subject_code": "21242",
+                                "subject_name": "Textile Machinery-2"
+                            },
+                            {
+                                "subject_code": "26611",
+                                "subject_name": "Computer Office Application"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "course_name": "Diploma in Agriculture",
+        "departments": [
+            {
+                "name": "Agronomy",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "31011",
+                                "subject_name": "Introductory Agriculture"
+                            },
+                            {
+                                "subject_code": "31012",
+                                "subject_name": "Soil Science"
+                            },
+                            {
+                                "subject_code": "31013",
+                                "subject_name": "Agricultural Economics"
+                            },
+                            {
+                                "subject_code": "25911",
+                                "subject_name": "Basic Mathematics"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "31014",
+                                "subject_name": "Plant Physiology"
+                            },
+                            {
+                                "subject_code": "31015",
+                                "subject_name": "Crop Production"
+                            },
+                            {
+                                "subject_code": "31016",
+                                "subject_name": "Agricultural Extension Education"
+                            },
+                            {
+                                "subject_code": "25712",
+                                "subject_name": "English"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "31031",
+                                "subject_name": "Farm Power and Machinery"
+                            },
+                            {
+                                "subject_code": "31032",
+                                "subject_name": "Principles of Irrigation and Drainage"
+                            },
+                            {
+                                "subject_code": "31033",
+                                "subject_name": "Pest Management"
+                            },
+                            {
+                                "subject_code": "25731",
+                                "subject_name": "Business Communication"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Horticulture",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "31021",
+                                "subject_name": "Introductory Horticulture"
+                            },
+                            {
+                                "subject_code": "31012",
+                                "subject_name": "Soil Science"
+                            },
+                            {
+                                "subject_code": "31013",
+                                "subject_name": "Agricultural Economics"
+                            },
+                            {
+                                "subject_code": "31022",
+                                "subject_name": "Botany"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "31023",
+                                "subject_name": "Agricultural Chemistry"
+                            },
+                            {
+                                "subject_code": "31024",
+                                "subject_name": "Fruit Production"
+                            },
+                            {
+                                "subject_code": "31025",
+                                "subject_name": "Vegetable Production"
+                            },
+                            {
+                                "subject_code": "25912",
+                                "subject_name": "Physics-1"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "31034",
+                                "subject_name": "Plant Propagation and Nursery Management"
+                            },
+                            {
+                                "subject_code": "31035",
+                                "subject_name": "Flower Production and Landscaping"
+                            },
+                            {
+                                "subject_code": "31036",
+                                "subject_name": "Postharvest Technology"
+                            },
+                            {
+                                "subject_code": "26611",
+                                "subject_name": "Computer Office Application"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "course_name": "Diploma in Business Studies",
+        "departments": [
+            {
+                "name": "Accounting",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "41011",
+                                "subject_name": "Principles of Accounting"
+                            },
+                            {
+                                "subject_code": "41012",
+                                "subject_name": "Business Mathematics"
+                            },
+                            {
+                                "subject_code": "25711",
+                                "subject_name": "Bangla"
+                            },
+                            {
+                                "subject_code": "25712",
+                                "subject_name": "English"
+                            },
+                            {
+                                "subject_code": "41013",
+                                "subject_name": "Computer Fundamentals"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "41021",
+                                "subject_name": "Introduction to Business"
+                            },
+                            {
+                                "subject_code": "41022",
+                                "subject_name": "Principles of Management"
+                            },
+                            {
+                                "subject_code": "41023",
+                                "subject_name": "Business Economics"
+                            },
+                            {
+                                "subject_code": "41014",
+                                "subject_name": "Financial Accounting"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "41031",
+                                "subject_name": "Cost Accounting"
+                            },
+                            {
+                                "subject_code": "41032",
+                                "subject_name": "Business Law"
+                            },
+                            {
+                                "subject_code": "41033",
+                                "subject_name": "Taxation"
+                            },
+                            {
+                                "subject_code": "41015",
+                                "subject_name": "Auditing"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Business Management",
+                "semesters": [
+                    {
+                        "semester_name": "1st",
+                        "subjects": [
+                            {
+                                "subject_code": "41021",
+                                "subject_name": "Introduction to Business"
+                            },
+                            {
+                                "subject_code": "41022",
+                                "subject_name": "Principles of Management"
+                            },
+                            {
+                                "subject_code": "41011",
+                                "subject_name": "Principles of Accounting"
+                            },
+                            {
+                                "subject_code": "41023",
+                                "subject_name": "Principles of Marketing"
+                            },
+                            {
+                                "subject_code": "41024",
+                                "subject_name": "Bangladesh Studies"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "2nd",
+                        "subjects": [
+                            {
+                                "subject_code": "41034",
+                                "subject_name": "Human Resource Management"
+                            },
+                            {
+                                "subject_code": "41035",
+                                "subject_name": "Financial Management"
+                            },
+                            {
+                                "subject_code": "41036",
+                                "subject_name": "Operations Management"
+                            },
+                            {
+                                "subject_code": "41025",
+                                "subject_name": "Business Communication"
+                            }
+                        ]
+                    },
+                    {
+                        "semester_name": "3rd",
+                        "subjects": [
+                            {
+                                "subject_code": "41037",
+                                "subject_name": "Entrepreneurship Development"
+                            },
+                            {
+                                "subject_code": "41038",
+                                "subject_name": "Supply Chain Management"
+                            },
+                            {
+                                "subject_code": "41039",
+                                "subject_name": "Project Management"
+                            },
+                            {
+                                "subject_code": "41026",
+                                "subject_name": "Business Ethics and Corporate Social Responsibility"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
