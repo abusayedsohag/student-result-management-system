@@ -9,6 +9,8 @@ import UploadResult from "../Components/Upload/UploadResult";
 import PrivateRoute from "../Router/PrivateRoute"
 import Single from "../Components/Upload/Single";
 import Upload from "../Components/Upload/Upload";
+import UploadStudent from "../Components/Upload/UploadStudent";
+import UploadResult1 from "../Components/Upload/UploadResult1";
 
 const router = createBrowserRouter([
     {
@@ -38,6 +40,14 @@ const router = createBrowserRouter([
             {
                 path: '/add',
                 element: <Upload></Upload>,
+            },
+            {
+                path: '/upload-student-info',
+                element: <PrivateRoute><UploadStudent></UploadStudent></PrivateRoute>,
+            },
+            {
+                path: '/upload-result-info',
+                element: <PrivateRoute><UploadResult1></UploadResult1></PrivateRoute>,
             },
         ]
     },

@@ -7,6 +7,7 @@ const API = axios.create({
 
 export const createStudent = (data) => API.post('/students', data);
 export const updateStudent = (roll, data) => API.put(`/students/${roll}`, data);
+
 export const fetchStudents = () => API.get('/students');
 export const fetchStudent = (roll) => API.get(`/students/${roll}`);
 

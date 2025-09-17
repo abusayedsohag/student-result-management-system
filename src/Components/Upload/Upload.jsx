@@ -49,6 +49,8 @@ const Upload = () => {
 
     const [selectCourse, setSelectCourse] = useState([])
     const [selectRegulation, setSelectRegulation] = useState([])
+    const [selectDept, setSelectDept] = useState([])
+    // const [selectSem, setSelectSem] = useState([])
 
     const handleTopChange = (e) => {
         const { name, value } = e.target;
@@ -58,30 +60,68 @@ const Upload = () => {
     const handleSelectCourse = (e) => {
         const courseValue = e.target.value
         const findCourse = courses.find(dept => dept.course_name === courseValue)
-
         const dept = findCourse?.departments
+
         setSelectCourse(dept)
     }
+
+    const handleSelectDept = (e) => {
+        const value = e.target.value;
+        const findDept = selectCourse.find(sem => sem.name === value)
+        const sem = findDept.semesters
+
+        setSelectDept(sem)
+    }
+
+    // const handleSemester = (e) => {
+    //     const value = e.target.value;
+    //     const findSem = selectDept.find(sem => sem.semester_name === value)
+    //     const subjects = findSem.subjects
+
+    //     setSelectSem(subjects)
+
+    // }
 
     const handleSelectRegulation = (e) => {
         const value = e.target.value
         const findRegulation = regulations.find(res => res.regulation === value)
-
         const sessionList = findRegulation.sessions
-        
+
         setSelectRegulation(sessionList)
     }
 
+
     const handleSemesterChange = (idx, e) => {
         const { name, value } = e.target;
+
+        const findSem = selectDept.find(sem => sem.semester_name === value);
+        const subjects = findSem ? findSem.subjects : [];
+
         setStudent(prev => {
             const semesters = [...prev.semesters];
             semesters[idx] = {
-                ...semesters[idx], [name]: name === 'result' ?
-                    Number(value) : value
+                ...semesters[idx],
+                [name]: value, // semester_name update
+                subjects: subjects?.map(sub => ({
+                    ...sub,
+                    theory_marks: 0,
+                    practical_marks: 0
+                }))
             };
             return { ...prev, semesters };
         });
+
+
+
+
+        // setStudent(prev => {
+        //     const semesters = [...prev.semesters];
+        //     semesters[idx] = {
+        //         ...semesters[idx], [name]: name === 'result' ?
+        //             Number(value) : value
+        //     };
+        //     return { ...prev, semesters };
+        // });
     }
 
     const handleSubjectChange = (sidx, subidx, e) => {
@@ -291,7 +331,10 @@ const Upload = () => {
                     <select
                         name="department"
                         value={student.department}
-                        onChange={handleTopChange}
+                        onChange={(e) => {
+                            handleTopChange(e);
+                            handleSelectDept(e);
+                        }}
                         disabled={!selectCourse}
                         className="border p-2 bg-gray-900"
                     >
@@ -343,18 +386,77 @@ const Upload = () => {
                         <option value="" disabled>Select Session</option>
                         {
                             selectRegulation?.map(ses => <>
-                            
+
                                 <option value={ses}>{ses}</option>
                             </>)
                         }
                     </select>
                 </div>
 
+                {/* {
+                    selectDept &&
+                    <div className='border p-2'>
+                        <div className='grid grid-cols-8 border'>
+                            {
+                                selectDept?.map(semes => <>
+
+                                    <button type='button' value={semes.semester_name} onClick={handleSemester} className='btn border-amber-200'>{semes.semester_name}</button>
+
+                                </>)
+                            }
+                        </div>
+
+
+                        <div>
+                            {
+                                selectSem?.map(subs =>
+                                    <>
+                                        <div className='grid grid-cols-8'>
+                                            <input className='input' type="number" name="" value={subs.subject_code} />
+
+                                            <input className='input col-span-2' type="text" name="" value={subs.subject_name} />
+
+                                            <input
+                                                className='input'
+                                                type="number"
+                                                name="theory_mark"
+                                                // value={marks.theory}
+                                                min="0"
+                                                max="100"
+                                                onChange={(e) => {
+                                                    if (e.target.value < 0) e.target.value = 0;
+                                                    if (e.target.value > 100) e.target.value = 100;
+                                                }}
+                                            />
+
+                                            <input
+                                                className='input'
+                                                type="number"
+                                                name="practical_mark"
+                                                // value={marks.practical}
+                                                min="0"
+                                                max="100"
+                                                onChange={(e) => {
+                                                    if (e.target.value < 0) e.target.value = 0;
+                                                    if (e.target.value > 100) e.target.value = 100;
+                                                }}
+                                            />
+
+                                            <input className='input' type="number" name="" />
+                                        </div>
+
+                                    </>
+                                )
+                            }
+                        </div>
+                    </div>
+                } */}
+
 
                 {student.semesters.map((sem, sIdx) => (
                     <div key={sIdx} className="border p-3 rounded">
                         <div className="flex justify-between items-center mb-2">
-                            <strong>{sem.semester_name || `Semester ${sIdx + 1}`}</strong>
+                            <strong>{sem.semester_name || `Semester & Subject`}</strong>
                             <div className="flex gap-2">
                                 <button type="button" onClick={() => addSubject(sIdx)}
                                     className="px-2 py-1 border rounded">+Sub</button>
@@ -370,19 +472,19 @@ const Upload = () => {
                             <select
                                 name="semester_name"
                                 value={sem.semester_name}
-                                onChange={(e) => handleSemesterChange(sIdx, e)}
+                                onChange={(e) => {
+                                    handleSemesterChange(sIdx, e);
+                                }}
                                 className="border p-2 bg-gray-900"
                             >
                                 <option value="" selected disabled>Select Semester</option>
-                                <option value="1st">1st</option>
-                                <option value="2nd">2nd</option>
-                                <option value="3rd">3rd</option>
-                                <option value="4th">4th</option>
-                                <option value="5th">5th</option>
-                                <option value="6th">6th</option>
-                                <option value="7th">7th</option>
-                                <option value="8th">8th</option>
+                                {
+                                    selectDept?.map(sem => <>
+                                        <option value={sem.semester_name}>{sem.semester_name}</option>
+                                    </>)
+                                }
                             </select>
+
 
                             {/* <input
                                 name="result"
@@ -421,9 +523,15 @@ const Upload = () => {
                         <div>
                             {sem.subjects.map((sub, subIdx) => (
                                 <div key={subIdx} className="grid grid-cols-6 gap-2 mb-2 itemsend">
-                                    <input name="subject_code" value={sub.subject_code}
-                                        onChange={(e) => handleSubjectChange(sIdx, subIdx, e)} placeholder="Code"
-                                        className="border p-2" />
+                                    <input
+                                        // name="subject_code"
+                                        value={sub.subject_code}
+                                        readOnly
+                                        // onChange={(e) => handleSubjectChange(sIdx, subIdx, e)} 
+                                        placeholder="Code"
+                                        className="border p-2"
+                                    />
+
                                     <input name="subject_name" value={sub.subject_name}
                                         onChange={(e) => handleSubjectChange(sIdx, subIdx, e)} placeholder="Name"
                                         className="border p-2 col-span-2" />
