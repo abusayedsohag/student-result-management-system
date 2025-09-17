@@ -207,7 +207,7 @@ const UploadStudent = () => {
                             dropdownMode="select"
                             onChange={(date) => {
                                 if (date) {
-                                    const formatted = date.toLocaleDateString("en-CA"); // yyyy-mm-dd format
+                                    const formatted = date.toLocaleDateString("en-CA");
                                     setStudent((prev) => ({ ...prev, date_of_birth: formatted }));
                                 }
                             }}
