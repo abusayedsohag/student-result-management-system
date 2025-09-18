@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { fetchCourses, fetchStudents, updateStudent } from './api';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const UploadResult = () => {
+
+    const navigate = useNavigate();
 
     const [roll, setRoll] = useState("");
     const [student, setStudent] = useState(null);
@@ -24,14 +27,12 @@ const UploadResult = () => {
     const handleFind = () => {
         const findRoll = students.find(rl => rl.roll === roll)
 
-
         if (findRoll) {
             const findCors = findRoll.course_name;
             const findDept = findRoll.department;
             const findCor = courses.find(data => data.course_name === findCors);
             const dept = findCor.departments.find(data => data.name === findDept);
             const semesters = dept.semesters;
-
 
             const studentWithFlags = {
                 ...findRoll,
@@ -46,7 +47,6 @@ const UploadResult = () => {
 
             setSemesters(semesters)
             setStudent(studentWithFlags)
-
         } else {
             Swal.fire({
                 icon: "error",
@@ -71,8 +71,8 @@ const UploadResult = () => {
                 result: "",
                 subjects: nextSemesterData.subjects.map(sub => ({
                     ...sub,
-                    theory_marks: 0,
-                    practical_marks: 0
+                    theory_marks: "",
+                    practical_marks: ""
                 }))
             };
 
@@ -80,8 +80,6 @@ const UploadResult = () => {
             return { ...prev, semesters };
         });
     };
-
-
 
     // marks change handler
     const handleSubjectChange = (semIdx, subIdx, e) => {
@@ -103,41 +101,22 @@ const UploadResult = () => {
         });
     };
 
-
-    const removeSemester = (i) => setStudent(prev => ({
-        ...prev, semesters:
-            prev.semesters.filter((_, idx) => idx !== i)
-    }));
-
     const calculateTGP = (theory) => {
         const tp = Number(theory) / 100 * 100
         const percentage = tp
 
         if (percentage >= 80) return 4.0;
-        if (percentage >= 75) return 3.75;
-        if (percentage >= 70) return 3.5;
-        if (percentage >= 65) return 3.25;
-        if (percentage >= 60) return 3.0;
-        if (percentage >= 55) return 2.75;
-        if (percentage >= 50) return 2.5;
-        if (percentage >= 45) return 2.25;
-        if (percentage >= 40) return 2.0;
-        return 0.0; // fail
+        if (percentage >= 40) return (tp * 0.05);
+        return 0.0;
     };
+
     const calculatePGP = (practical) => {
         const tp = Number(practical) / 50 * 100
         const percentage = tp
 
         if (percentage >= 80) return 4.0;
-        if (percentage >= 75) return 3.75;
-        if (percentage >= 70) return 3.5;
-        if (percentage >= 65) return 3.25;
-        if (percentage >= 60) return 3.0;
-        if (percentage >= 55) return 2.75;
-        if (percentage >= 50) return 2.5;
-        if (percentage >= 45) return 2.25;
-        if (percentage >= 40) return 2.0;
-        return 0.0; // fail
+        if (percentage >= 40) return (tp * 0.05);
+        return 0.0;
     };
 
     const calculateGP = (theory, practical) => {
@@ -148,7 +127,6 @@ const UploadResult = () => {
     const calculateSemesterGPA = (subjects) => {
         if (!subjects.length) return "F";
 
-        // Check if any subject's theory_marks is empty or 0
         const incomplete = subjects.some(sub => !sub.theory_marks);
         if (incomplete) return "F";
 
@@ -158,7 +136,6 @@ const UploadResult = () => {
 
         return (totalGP / subjects.length).toFixed(2);
     };
-
 
     const handleCalculateSemester = (semesterIndex) => {
         setStudent(prev => {
@@ -176,26 +153,50 @@ const UploadResult = () => {
         });
     };
 
-
-
     const handleUpdate = async () => {
         try {
             await updateStudent(roll, student);
-            alert("✅ Result Updated Successfully!");
+            Swal.fire({
+                title: "✅ Result Updated Successfully!",
+                icon: "success",
+                draggable: true,
+            }).then(() => {
+                navigate(0); // page refresh
+            });
         } catch (err) {
             console.error(err);
             alert("❌ Failed to update result");
         }
     };
 
-
+    const handleCancel = () => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, Cancel it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: "Canceled!",
+                    text: "Your info has been canceled.",
+                    icon: "success"
+                }).then(() => {
+                    navigate(0); // page refresh
+                });
+            }
+        });
+    }
 
     return (
-        <div className='w-11/12 mx-auto'>
-            <h2 className="text-xl font-bold mb-4">Upload Student Result</h2>
+        <div className='w-11/12 lg:w-[800px] mx-auto'>
+            <h2 className="text-xl font-bold mb-4 text-center">Upload Student Result</h2>
 
             {/* Roll Search */}
-            <div className="mb-4">
+            <div className="mb-4 text-center">
                 <input
                     value={roll}
                     onChange={(e) => {
@@ -215,33 +216,33 @@ const UploadResult = () => {
             {/* Subject Marks */}
             {student && (
                 <div>
-                    <div className="grid grid-cols-4">
-                        <div className='w-full p-2 border'>Roll </div>
-                        <div className='w-full p-2 border'>{student.roll}</div>
-                        <div className='w-full p-2 border'>Registration</div>
-                        <div className='w-full p-2 border'>{student.registration}</div>
-                        <div className='w-full p-2 border'>Student Name</div>
-                        <div className='w-full p-2 border'>{student.student_name}</div>
-                        <div className='w-full p-2 border'>Date of Birth</div>
-                        <div className='w-full p-2 border'>{student.date_of_birth}</div>
-                        <div className='w-full p-2 border'>Father's Name</div>
-                        <div className='w-full p-2 border'>{student.father_name}</div>
-                        <div className='w-full p-2 border'>Mother's Name</div>
-                        <div className='w-full p-2 border'>{student.mother_name}</div>
-                        <div className='w-full p-2 border'>Institute Name</div>
-                        <div className='w-full p-2 border col-span-2'>{student.name_of_industry}</div>
-                        <div className='w-full p-2 border'>Gender: {student.gender}</div>
-                        <div className='w-full p-2 border'>Course Name</div>
-                        <div className='w-full p-2 border col-span-2'>{student.course_name}</div>
-                        <div className='w-full p-2 border'>Regulation: {student.regulation}</div>
-                        <div className='w-full p-2 border'>Department</div>
-                        <div className='w-full p-2 border col-span-2'>{student.department}</div>
-                        <div className='w-full p-2 border'>Session: {student.session}</div>
-                        <div className='w-full p-2 border'>Grade Points</div>
-                        <div className='w-full border col-span-3 grid grid-cols-8'>
+                    <div className="grid grid-cols-4 border my-5">
+                        <div className='w-full p-2 border-r border-b'>Roll </div>
+                        <div className='w-full p-2 border-r border-b'>{student.roll}</div>
+                        <div className='w-full p-2 border-r border-b'>Registration</div>
+                        <div className='w-full p-2  border-b'>{student.registration}</div>
+                        <div className='w-full p-2 border-r border-b'>Student Name</div>
+                        <div className='w-full p-2 border-r border-b capitalize'>{student.student_name}</div>
+                        <div className='w-full p-2 border-r border-b'>Date of Birth</div>
+                        <div className='w-full p-2  border-b'>{student.date_of_birth}</div>
+                        <div className='w-full p-2 border-r border-b'>Father's Name</div>
+                        <div className='w-full p-2 border-r border-b capitalize'>{student.father_name}</div>
+                        <div className='w-full p-2 border-r border-b'>Mother's Name</div>
+                        <div className='w-full p-2 border-b capitalize'>{student.mother_name}</div>
+                        <div className='w-full p-2 border-r border-b'>Institute Name</div>
+                        <div className='w-full p-2 border-r border-b col-span-2'>{student.name_of_industry}</div>
+                        <div className='w-full p-2  border-b'>Gender: {student.gender}</div>
+                        <div className='w-full p-2 border-r border-b'>Course Name</div>
+                        <div className='w-full p-2 border-r border-b col-span-2'>{student.course_name}</div>
+                        <div className='w-full p-2  border-b'>Regulation: {student.regulation}</div>
+                        <div className='w-full p-2 border-r border-b'>Department</div>
+                        <div className='w-full p-2 border-r border-b col-span-2'>{student.department}</div>
+                        <div className='w-full p-2 border-b'>Session: {student.session}</div>
+                        <div className='w-full p-2 border-r'>Grade Points</div>
+                        <div className='w-full col-span-3 grid grid-cols-8'>
                             {
-                                student.semesters.map(data => (
-                                    <div className='border-r grid grid-cols-2'>
+                                student.semesters.map((data, idx) => (
+                                    <div key={idx} className='border-r grid grid-cols-2'>
                                         <div className='border-r py-2 text-center'>
                                             {data.semester_name}
                                         </div>
@@ -260,12 +261,14 @@ const UploadResult = () => {
 
                         return (
                             <div key={sIdx} className="border p-3 rounded mb-3">
-                                <div className="flex justify-between items-center mb-2">
-                                    <strong>Semester: {sem.semester_name}</strong>
-
+                                <div className="mb-2">
+                                    <h1 className='text-xl font-semibold'>Semester: {sem.semester_name}</h1>
                                 </div>
 
-                                <div className="grid grid-cols-3 gap-2 mb-2">
+                                <div className="grid grid-cols-4 mb-2">
+                                    <div className='border p-2'>
+                                        <h1>Semester</h1>
+                                    </div>
                                     <input
                                         type="text"
                                         name="semester_name"
@@ -274,8 +277,12 @@ const UploadResult = () => {
                                         className="border p-2 "
                                     />
 
+                                    <div className='border p-2'>
+                                        <h1>Total CGPA</h1>
+                                    </div>
+
                                     {sem.result ? (
-                                        <p className="font-bold border p-2">GPA: {sem.result}</p>
+                                        <p className="font-bold border p-2">{sem.result}</p>
                                     ) : (
                                         <button
                                             type="button"
@@ -288,26 +295,34 @@ const UploadResult = () => {
 
                                 </div>
 
-                                <div>
+                                <div className='border-l border-t'>
+                                    <div className='grid grid-cols-6'>
+                                        <h1 className='border-r border-b p-2'>Code</h1>
+                                        <h1 className='border-r border-b p-2 col-span-2'>Subjects Name</h1>
+                                        <h1 className='border-r border-b p-2'>Theory</h1>
+                                        <h1 className='border-r border-b p-2'>Practical</h1>
+                                        <h1 className='border-r border-b p-2'>Grade</h1>
+                                    </div>
                                     {sem.subjects.map((sub, subIdx) => (
-                                        <div key={subIdx} className="grid grid-cols-6 gap-2 mb-2 itemsend">
+                                        <div key={subIdx} className="grid grid-cols-6 itemsend">
                                             <input
                                                 name="subject_code"
                                                 value={sub.subject_code}
                                                 readOnly
-                                                className="border p-2 outline-0"
+                                                className="border-r border-b p-2 outline-0"
                                                 required
                                             />
                                             <input
                                                 name="subject_name"
                                                 value={sub.subject_name}
                                                 readOnly
-                                                className="border p-2 col-span-2 outline-0"
+                                                className="border-r border-b p-2 col-span-2 outline-0"
                                                 required
                                             />
                                             <input
                                                 name="theory_marks"
                                                 value={sub.theory_marks}
+                                                placeholder='0-100'
                                                 onChange={(e) => {
                                                     let value = Number(e.target.value);
 
@@ -318,12 +333,13 @@ const UploadResult = () => {
                                                 }}
                                                 required
                                                 type="number"
-                                                className="border p-2"
+                                                className="border-r border-b p-2"
                                                 disabled={sub.theory_marks !== 0 && sub.isSaved}
                                             />
                                             <input
                                                 name="practical_marks"
                                                 value={sub.practical_marks}
+                                                placeholder='0-50'
                                                 onChange={(e) => {
                                                     let value = Number(e.target.value);
 
@@ -334,15 +350,14 @@ const UploadResult = () => {
                                                 }}
                                                 required
                                                 type="number"
-                                                className="border p-2"
+                                                className="border-r border-b p-2"
                                                 disabled={sub.theory_marks !== 0 && sub.isSaved}
                                             />
 
-                                            <div className='border p-2'>
+                                            <div className='border-r border-b p-2'>
                                                 <strong>{calculateGP(sub.theory_marks, sub.practical_marks)}</strong>
                                             </div>
                                         </div>
-
                                     ))}
                                 </div>
                             </div>
@@ -357,8 +372,12 @@ const UploadResult = () => {
                         + Add Semester
                     </button>
 
-                    <button onClick={handleUpdate} className="bg-blue-600 text-white p-2 mt-3 rounded">
+                    <button onClick={handleUpdate} className="mr-2 bg-blue-600 text-white p-2 mt-3 rounded">
                         Update Result
+                    </button>
+
+                    <button onClick={handleCancel} className="bg-red-600 text-white p-2 mt-3 rounded">
+                        Cancel
                     </button>
                 </div>
             )}
