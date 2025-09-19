@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchCourses, fetchStudents, updateStudent } from './api';
+import { fetchCourses, fetchStudents, updateStudent } from '../../assets/api';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 

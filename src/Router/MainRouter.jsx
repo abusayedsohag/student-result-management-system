@@ -19,7 +19,7 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
             },
             {
-                path: "/result",
+                path: "/result/:roll",
                 element: <Result></Result>,
             },
             {

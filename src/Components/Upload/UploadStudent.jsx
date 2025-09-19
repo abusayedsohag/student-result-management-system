@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import sessionData from "../../assets/info/session.json"
-import { createStudent, fetchCourses, fetchInstitutes } from './api';
+import { createStudent, fetchCourses, fetchInstitutes } from '../../assets/api';
 import Swal from 'sweetalert2';
 
 
