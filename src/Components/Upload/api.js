@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Correct Axios instance
 const API = axios.create({
-  baseURL: 'http://localhost:5000/api',
+  baseURL: import.meta.env.VITE_API_LINK,
 });
 
 export const createStudent = (data) => API.post('/students', data);
