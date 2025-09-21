@@ -45,7 +45,7 @@ const Form = () => {
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
-                text: "Info in not Currect",
+                text: "Info is not Currect",
             });
         } else {
             navi(`/result/${roll}`);
@@ -90,8 +90,6 @@ const Form = () => {
                             required />
 
                         <button type="submit" className='btn btn-neutral mt-4'>Find Result</button>
-
-                        {/* <Link to={`/result/${roll}`} onClick={handleSearch} className='btn btn-neutral mt-4'>Find Result</Link> */}
                     </fieldset>
                 </form>
             </div>

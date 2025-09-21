@@ -2,10 +2,11 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthProvider } from '../../Provider/AuthContext';
 import { toast, ToastContainer } from 'react-toastify';
+import logo from '../../../public/logo.png'
 
 const Navbar = () => {
 
-    const {user, signOutme } = useContext(AuthProvider)
+    const { user, signOutme } = useContext(AuthProvider)
 
     const handleSignOut = () => {
         signOutme()
@@ -20,8 +21,13 @@ const Navbar = () => {
     return (
         <div>
             <div className="navbar bg-base-100 shadow-sm">
-                <div className="flex-1">
-                    <a href='/#' className="btn btn-ghost text-xl">Diploma Result </a>
+                <div className="flex-1 flex">
+                    <img
+                        src={logo}
+                        alt="Logo"
+                        className='h-10'
+                    />
+                    <a href='/' className="btn btn-ghost text-xl p-0">Diploma Result</a>
                 </div>
                 <div className="flex-none">
                     <div className="dropdown dropdown-end">
