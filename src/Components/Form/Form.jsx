@@ -53,7 +53,7 @@ const Form = () => {
     }
 
     return (
-        <div className='w-1/2 mx-auto'>
+        <div className='md:w-1/2 mx-auto'>
             <div className="p-6 space-y-6">
                 <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="">
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">

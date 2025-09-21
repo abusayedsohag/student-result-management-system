@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthProvider } from '../../Provider/AuthContext';
-import { toast, ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
 
@@ -21,7 +21,11 @@ const Login = () => {
                 navigate('/')
             })
             .catch(error => {
-                toast("Username or Password not Currect")
+                Swal.fire({
+                    title: "Username or Password not Currect",
+                    icon: "warning",
+                    draggable: true,
+                });
             })
     };
 
@@ -29,7 +33,7 @@ const Login = () => {
     return (
         <div>
             <div className="hero bg-base-200 min-h-screen">
-                <div className="hero-content flex-col">
+                <div className="hero-content sm:min-w-4/12 flex-col">
                     <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
                         <div className="card-body">
                             <h1 className='text-center text-2xl font-semibold'>Admin Login</h1>
@@ -47,7 +51,6 @@ const Login = () => {
                     </div>
                 </div>
             </div>
-            <ToastContainer></ToastContainer>
         </div>
     );
 };
