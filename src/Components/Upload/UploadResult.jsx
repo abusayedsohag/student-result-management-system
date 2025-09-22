@@ -72,7 +72,8 @@ const UploadResult = () => {
                 subjects: nextSemesterData.subjects.map(sub => ({
                     ...sub,
                     theory_marks: "",
-                    practical_marks: ""
+                    practical_marks: "",
+                    grade_point: ""
                 }))
             };
 
@@ -81,25 +82,37 @@ const UploadResult = () => {
         });
     };
 
-    // marks change handler
     const handleSubjectChange = (semIdx, subIdx, e) => {
         const { name, value } = e.target;
+
         setStudent((prev) => {
             const semesters = [...prev.semesters];
             const subjects = [...semesters[semIdx].subjects];
-            subjects[subIdx] = {
+
+            let updatedSubject = {
                 ...subjects[subIdx],
                 [name]: Number(value),
             };
 
+            if (name === "theory_marks" || name === "practical_marks") {
+                updatedSubject = {
+                    ...updatedSubject,
+                    grade_point: null,
+                };
+            }
+
+            subjects[subIdx] = updatedSubject;
+
             semesters[semIdx] = {
                 ...semesters[semIdx],
                 subjects,
-                result: null
+                result: null,
             };
+
             return { ...prev, semesters };
         });
     };
+
 
     const calculateTGP = (theory) => {
         const tp = Number(theory) / 100 * 100
@@ -120,9 +133,25 @@ const UploadResult = () => {
     };
 
     const calculateGP = (theory, practical) => {
-        const total = ((calculateTGP(theory) + calculatePGP(practical)) / 2)
-        return Number(total.toFixed(2))
-    }
+        if (theory === "" || theory == null || practical === "" || practical == null) {
+            return "F";
+        }
+        const total = (calculateTGP(Number(theory)) + calculatePGP(Number(practical))) / 2;
+        if (isNaN(total)) return "F";
+        return Number(total.toFixed(2));
+    };
+
+
+
+    const handleSubGradePoint = (sIdx, subIdx) => {
+        const newSemesters = [...student.semesters];
+        const subject = newSemesters[sIdx].subjects[subIdx];
+        subject.grade_point = calculateGP(subject.theory_marks, subject.practical_marks);
+        setStudent({
+            ...student,
+            semesters: newSemesters,
+        });
+    };
 
     const calculateSemesterGPA = (subjects) => {
         if (!subjects.length) return "F";
@@ -354,9 +383,21 @@ const UploadResult = () => {
                                                 disabled={sub.theory_marks !== 0 && sub.isSaved}
                                             />
 
-                                            <div className='border-r border-b p-2'>
-                                                <strong>{calculateGP(sub.theory_marks, sub.practical_marks)}</strong>
-                                            </div>
+                                            {sub.grade_point ? (
+                                                <p
+                                                    className="border-r border-b p-2 font-bold"
+                                                >
+                                                    {sub.grade_point}
+                                                </p>
+                                            ) : (
+                                                <button
+                                                    type="button"
+                                                    onClick={() => handleSubGradePoint(sIdx, subIdx)}
+                                                    className="bg-blue-500 text-white px-3 py-1 rounded"
+                                                >
+                                                    Calculate GP
+                                                </button>
+                                            )}
                                         </div>
                                     ))}
                                 </div>

@@ -19,6 +19,22 @@ const Result = () => {
     const subjectInfo = findSemi?.subjects
 
 
+    const getLetterGrade = (gp) => {
+        if (gp === "F" || gp < 2) return "F";
+        if (gp >= 4) return "A+";
+        if (gp >= 3.75) return "A";
+        if (gp >= 3.5) return "A-";
+        if (gp >= 3.25) return "B+";
+        if (gp >= 3) return "B";
+        if (gp >= 2.75) return "B-";
+        if (gp >= 2.5) return "C+";
+        if (gp >= 2.25) return "C";
+        if (gp >= 2) return "D";
+        return "F";
+    };
+
+
+
     const handleSubject = (semester) => {
         setSemister(semester)
     }
@@ -144,7 +160,8 @@ const Result = () => {
                                                                 <tr className="text-center grid grid-cols-3">
                                                                     <td>{data.theory_marks}</td>
                                                                     <td>{data.practical_marks}</td>
-                                                                    <td>{data.total_grade}</td>
+                                                                    {/* <td>{data.grade_point}</td> */}
+                                                                    <td>{getLetterGrade(data.grade_point)}</td>
                                                                 </tr>
                                                             </tbody>
                                                         </table>
