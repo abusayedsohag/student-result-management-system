@@ -160,7 +160,6 @@ const Result = () => {
                                                                 <tr className="text-center grid grid-cols-3">
                                                                     <td>{data.theory_marks}</td>
                                                                     <td>{data.practical_marks}</td>
-                                                                    {/* <td>{data.grade_point}</td> */}
                                                                     <td>{getLetterGrade(data.grade_point)}</td>
                                                                 </tr>
                                                             </tbody>

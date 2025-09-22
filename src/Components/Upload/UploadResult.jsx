@@ -141,8 +141,6 @@ const UploadResult = () => {
         return Number(total.toFixed(2));
     };
 
-
-
     const handleSubGradePoint = (sIdx, subIdx) => {
         const newSemesters = [...student.semesters];
         const subject = newSemesters[sIdx].subjects[subIdx];
