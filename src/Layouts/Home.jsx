@@ -3,7 +3,7 @@ import Form from '../Components/Form/Form';
 
 const Home = () => {
     return (
-        <div>
+        <div className='min-h-screen'>
             <Form></Form>
         </div>
     );

@@ -172,7 +172,7 @@ const UploadStudent = () => {
 
 
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className='w-11/12 mx-auto max-w-5xl'>
             <div className='py-8'>
                 <h1 className='text-xl md:text-5xl font-black text-center'>Upload Student Information</h1>
             </div>

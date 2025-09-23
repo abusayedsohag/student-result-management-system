@@ -53,14 +53,15 @@ const Form = () => {
     }
 
     return (
-        <div className='md:w-1/2 mx-auto'>
-            <div className="p-6 space-y-6">
-                <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }} className="">
-                    <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
-                        <legend className="fieldset-legend text-center text-3xl">Diploma Result</legend>
+        <div className='max-w-lg mx-auto my-10'>
+            <h1 className='text-5xl font-bold text-center'>Diploma Result</h1>
+            <p className='text-center pt-3 uppercase'>"Your hard work, your result, your Future"</p>
+            <div className="pt-8">
+                <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }}>
+                    <fieldset className="fieldset bg-[#F4FCFF] border-base-300 shadow-2xl shadow-blue-300 rounded-box border p-8">
 
                         <label className='label'>Exam</label>
-                        <select className='select w-full' onChange={(e) => setCourse(e.target.value)} name='course' value={course} required>
+                        <select className='select w-full bg-sky-100' onChange={(e) => setCourse(e.target.value)} name='course' value={course} required>
                             <option value="" disabled>Select Course</option>
                             {
                                 category.map((data, index) =>
@@ -70,7 +71,7 @@ const Form = () => {
                         </select>
 
                         <label className='label'>Regulation</label>
-                        <select name="regulation" value={regu} onChange={(e) => setRegu(e.target.value)} className='select w-full' required>
+                        <select name="regulation" value={regu} onChange={(e) => setRegu(e.target.value)} className='select w-full bg-sky-100' required>
                             <option value="" disabled>Select Regulation</option>
                             {
                                 regulation.map((data, index) =>
@@ -85,11 +86,11 @@ const Form = () => {
                             name='roll'
                             value={roll}
                             onChange={(e) => setRoll(e.target.value)}
-                            className="input w-full"
+                            className="input w-full bg-sky-100 "
                             placeholder="Roll"
                             required />
 
-                        <button type="submit" className='btn btn-neutral mt-4'>Find Result</button>
+                        <button type="submit" className='btn bg-sky-500 mt-4 '>Find Result</button>
                     </fieldset>
                 </form>
             </div>
