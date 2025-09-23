@@ -58,11 +58,11 @@ const Form = () => {
             <p className='text-center pt-3 uppercase'>"Your hard work, your result, your Future"</p>
             <div className="pt-8">
                 <form onSubmit={(e) => { e.preventDefault(); handleSearch(); }}>
-                    <fieldset className="fieldset bg-[#F4FCFF] border-base-300 shadow-2xl shadow-blue-300 rounded-box border p-8">
+                    <fieldset className="fieldset bg-[#F4FCFF] border-base-300 shadow-2xl shadow-blue-300 rounded-2xl border p-8">
 
-                        <label className='label'>Exam</label>
+                        <label>Curriculum</label>
                         <select className='select w-full bg-sky-100' onChange={(e) => setCourse(e.target.value)} name='course' value={course} required>
-                            <option value="" disabled>Select Course</option>
+                            <option value="" disabled>Select Curriculum</option>
                             {
                                 category.map((data, index) =>
                                     <option key={index} value={data}>{data}</option>
@@ -70,7 +70,7 @@ const Form = () => {
                             }
                         </select>
 
-                        <label className='label'>Regulation</label>
+                        <label>Regulation</label>
                         <select name="regulation" value={regu} onChange={(e) => setRegu(e.target.value)} className='select w-full bg-sky-100' required>
                             <option value="" disabled>Select Regulation</option>
                             {
@@ -80,17 +80,17 @@ const Form = () => {
                             }
                         </select>
 
-                        <label className="label">Roll</label>
+                        <label>Roll</label>
                         <input
                             type="number"
                             name='roll'
                             value={roll}
                             onChange={(e) => setRoll(e.target.value)}
                             className="input w-full bg-sky-100 "
-                            placeholder="Roll"
+                            placeholder="Enter Your Roll"
                             required />
 
-                        <button type="submit" className='btn bg-sky-500 mt-4 '>Find Result</button>
+                        <button type="submit" className='btn bg-sky-500 mt-4 text-white'>Find Result</button>
                     </fieldset>
                 </form>
             </div>
