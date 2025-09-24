@@ -3,7 +3,7 @@ import logo from "../../../public/logo.png"
 const Footer = () => {
     return (
         <div className="">
-            <footer className="footer grid grid-cols-2 md:grid-cols-3 bg-neutral text-neutral-content p-4 md:p-10">
+            <footer className="footer grid grid-cols-2 md:grid-cols-3 bg-white rounded-t-2xl p-4 md:px-10 border-t border-amber-300">
                 <aside className="col-span-2 md:col-span-1">
                     <img src={logo} alt="Logo" className='h-16 md:h-24' />
                     <p className="md:text-sm">
@@ -32,10 +32,9 @@ const Footer = () => {
                     </div>
                 </nav>
             </footer>
-            <footer className="footer sm:footer-horizontal footer-center bg-base-300 text-base-content p-1 md:p-4">
-                <aside>
-                    <p className="text-[10px] md:text-sm">Copyright © 2026 - All right reserved by Diploma Result Ltd</p>
-                </aside>
+            <footer className="footer flex bg-white items-center p-4">
+                <img className='h-7' src={logo} alt="Diploma result" />
+                <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
             </footer>
         </div>
     );
