@@ -219,63 +219,66 @@ const UploadResult = () => {
     }
 
     return (
-        <div className='w-11/12 lg:w-[800px] mx-auto'>
-            <h2 className="text-xl font-bold mb-4 text-center">Upload Student Result</h2>
-
+        <div className='lg:max-w-3xl md:max-w-xl mx-auto mt-10'>
             {/* Roll Search */}
-            <div className="mb-4 text-center">
-                <input
-                    value={roll}
-                    onChange={(e) => {
-                        const value = e.target.value;
-                        if (/^\d{0,6}$/.test(value)) {
-                            setRoll(value);
-                        }
-                    }}
-                    placeholder="Enter Roll"
-                    className="border p-2"
-                />
-                <button onClick={handleFind} className="bg-green-600 text-white p-2 ml-2">
-                    Find Student
-                </button>
+            <div className=" max-w-xl rounded-xl text-center px-10 mx-auto space-y-3 min-h-96 items-center flex justify-center flex-col">
+                <h2 className="text-3xl font-bold text-center">Upload Student’s Result</h2>
+                <p className='pb-3'>“Turning Hard Work into Digital Success.”</p>
+                <div className='bg-white w-8/12 mx-auto rounded-lg flex justify-between'>
+                    <input
+                        value={roll}
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            if (/^\d{0,6}$/.test(value)) {
+                                setRoll(value);
+                            }
+                        }}
+                        placeholder="Enter Student Roll"
+                        className="p-2 rounded-2xl outline-0 w-7/12"
+                    />
+                    <button onClick={handleFind} className="bg-green-600 w-5/12 text-white p-2 ml-2 rounded-lg">
+                        Find Student
+                    </button>
+                </div>
             </div>
 
             {/* Subject Marks */}
             {student && (
-                <div>
-                    <div className="grid grid-cols-4 border my-5">
-                        <div className='w-full p-2 border-r border-b'>Roll </div>
-                        <div className='w-full p-2 border-r border-b'>{student.roll}</div>
-                        <div className='w-full p-2 border-r border-b'>Registration</div>
-                        <div className='w-full p-2  border-b'>{student.registration}</div>
-                        <div className='w-full p-2 border-r border-b'>Student Name</div>
-                        <div className='w-full p-2 border-r border-b capitalize'>{student.student_name}</div>
-                        <div className='w-full p-2 border-r border-b'>Date of Birth</div>
-                        <div className='w-full p-2  border-b'>{student.date_of_birth}</div>
-                        <div className='w-full p-2 border-r border-b'>Father's Name</div>
-                        <div className='w-full p-2 border-r border-b capitalize'>{student.father_name}</div>
-                        <div className='w-full p-2 border-r border-b'>Mother's Name</div>
-                        <div className='w-full p-2 border-b capitalize'>{student.mother_name}</div>
-                        <div className='w-full p-2 border-r border-b'>Institute Name</div>
-                        <div className='w-full p-2 border-r border-b col-span-2'>{student.name_of_industry}</div>
-                        <div className='w-full p-2  border-b'>Gender: {student.gender}</div>
-                        <div className='w-full p-2 border-r border-b'>Course Name</div>
-                        <div className='w-full p-2 border-r border-b col-span-2'>{student.course_name}</div>
-                        <div className='w-full p-2  border-b'>Regulation: {student.regulation}</div>
-                        <div className='w-full p-2 border-r border-b'>Department</div>
-                        <div className='w-full p-2 border-r border-b col-span-2'>{student.department}</div>
-                        <div className='w-full p-2 border-b'>Session: {student.session}</div>
-                        <div className='w-full p-2 border-r'>Grade Points</div>
-                        <div className='w-full col-span-3 grid grid-cols-8'>
+                <div className='max-w-3xl mb-10'>
+                    <div className="grid grid-cols-4 my-5">
+                        <div className='col-span-4 p-2 rounded-t-lg text-center bg-sky-300 font-semibold'>Student's Information Summary</div>
+                        <div className='w-full p-2 pl-4 bg-gray-200'>Roll </div>
+                        <div className='w-full p-2 bg-gray-200'>{student.roll}</div>
+                        <div className='w-full p-2 bg-gray-200'>Registration</div>
+                        <div className='w-full p-2 bg-gray-200'>{student.registration}</div>
+                        <div className='w-full p-2 pl-4 bg-white'>Student Name</div>
+                        <div className='w-full p-2 bg-white capitalize'>{student.student_name}</div>
+                        <div className='w-full p-2 bg-white'>Date of Birth</div>
+                        <div className='w-full p-2 bg-white'>{student.date_of_birth}</div>
+                        <div className='w-full p-2 pl-4 bg-gray-200'>Father's Name</div>
+                        <div className='w-full p-2 bg-gray-200 capitalize'>{student.father_name}</div>
+                        <div className='w-full p-2 bg-gray-200'>Mother's Name</div>
+                        <div className='w-full p-2 bg-gray-200 capitalize'>{student.mother_name}</div>
+                        <div className='w-full p-2 pl-4  bg-white'>Institute Name</div>
+                        <div className='w-full p-2  bg-white col-span-2'>{student.name_of_industry}</div>
+                        <div className='w-full p-2 bg-white'>Gender: {student.gender}</div>
+                        <div className='w-full p-2 pl-4 bg-gray-200'>Curriculum Name</div>
+                        <div className='w-full p-2 bg-gray-200 col-span-2'>{student.course_name}</div>
+                        <div className='w-full p-2 bg-gray-200'>Regulation: {student.regulation}</div>
+                        <div className='w-full p-2 pl-4 bg-white'>Department</div>
+                        <div className='w-full p-2 bg-white col-span-2'>{student.department}</div>
+                        <div className='w-full p-2 bg-white'>Session: {student.session}</div>
+                        <div className='w-full p-2 pl-4 bg-gray-200'>Semesters <br /> Grade Points</div>
+                        <div className='w-full col-span-3 grid grid-cols-8 bg-gray-200'>
                             {
                                 student.semesters.map((data, idx) => (
-                                    <div key={idx} className='border-r grid grid-cols-2'>
-                                        <div className='border-r py-2 text-center'>
+                                    <div key={idx} className='px-2 items-center my-2 space-y-1'>
+                                        <h1 className='text-center bg-sky-300 rounded-2xl'>
                                             {data.semester_name}
-                                        </div>
-                                        <div className='py-2 text-center'>
+                                        </h1>
+                                        <h1 className='text-center font-semibold bg-green-300  rounded-2xl'>
                                             {data.result}
-                                        </div>
+                                        </h1>
                                     </div>
                                 ))
                             }
@@ -287,137 +290,142 @@ const UploadResult = () => {
 
 
                         return (
-                            <div key={sIdx} className="border p-3 rounded mb-3">
-                                <div className="mb-2">
-                                    <h1 className='text-xl font-semibold'>Semester: {sem.semester_name}</h1>
+
+                            <div>
+
+                                <div>
+                                    <h1 className='text-2xl font-medium text-center pb-6'>Subject-wise Grade & Total CGPA</h1>
                                 </div>
 
-                                <div className="grid grid-cols-4 mb-2">
-                                    <div className='border p-2'>
-                                        <h1>Semester</h1>
+                                <div key={sIdx} className="rounded mb-3">
+                                    <div className='bg-sky-300 p-2 rounded-t-lg text-center'>
+                                        <h1>{sem.semester_name} Semester</h1>
                                     </div>
-                                    <input
-                                        type="text"
-                                        name="semester_name"
-                                        readOnly
-                                        value={sem.semester_name}
-                                        className="border p-2 "
-                                    />
+                                    <div className="flex justify-between items-center bg-white p-2">
+                                        <h1 className=''>Semester</h1>
+                                        <input
+                                            type="text"
+                                            name="semester_name"
+                                            readOnly
+                                            value={sem.semester_name}
+                                            className=""
+                                        />
 
-                                    <div className='border p-2'>
                                         <h1>Total CGPA</h1>
+                                        {sem.result ? (
+                                            <p className="font-bold">{sem.result}</p>
+                                        ) : (
+                                            <button
+                                                type="button"
+                                                onClick={() => handleCalculateSemester(sIdx)}
+                                                className="bg-sky-500 px-1 text-sm text-white rounded"
+                                            >
+                                                Calc CGPA
+                                            </button>
+                                        )}
                                     </div>
 
-                                    {sem.result ? (
-                                        <p className="font-bold border p-2">{sem.result}</p>
-                                    ) : (
-                                        <button
-                                            type="button"
-                                            onClick={() => handleCalculateSemester(sIdx)}
-                                            className="bg-blue-500 text-white px-3 py-1 rounded"
-                                        >
-                                            Calculate GPA
-                                        </button>
-                                    )}
-
-                                </div>
-
-                                <div className='border-l border-t'>
-                                    <div className='grid grid-cols-6'>
-                                        <h1 className='border-r border-b p-2'>Code</h1>
-                                        <h1 className='border-r border-b p-2 col-span-2'>Subjects Name</h1>
-                                        <h1 className='border-r border-b p-2'>Theory</h1>
-                                        <h1 className='border-r border-b p-2'>Practical</h1>
-                                        <h1 className='border-r border-b p-2'>Grade</h1>
-                                    </div>
-                                    {sem.subjects.map((sub, subIdx) => (
-                                        <div key={subIdx} className="grid grid-cols-6 itemsend">
-                                            <input
-                                                name="subject_code"
-                                                value={sub.subject_code}
-                                                readOnly
-                                                className="border-r border-b p-2 outline-0"
-                                                required
-                                            />
-                                            <input
-                                                name="subject_name"
-                                                value={sub.subject_name}
-                                                readOnly
-                                                className="border-r border-b p-2 col-span-2 outline-0"
-                                                required
-                                            />
-                                            <input
-                                                name="theory_marks"
-                                                value={sub.theory_marks}
-                                                placeholder='0-100'
-                                                onChange={(e) => {
-                                                    let value = Number(e.target.value);
-
-                                                    if (value < 0) return value = 0;
-                                                    if (value > 100) return value = 100;
-
-                                                    handleSubjectChange(sIdx, subIdx, e)
-                                                }}
-                                                required
-                                                type="number"
-                                                className="border-r border-b p-2"
-                                                disabled={sub.theory_marks !== 0 && sub.isSaved}
-                                            />
-                                            <input
-                                                name="practical_marks"
-                                                value={sub.practical_marks}
-                                                placeholder='0-50'
-                                                onChange={(e) => {
-                                                    let value = Number(e.target.value);
-
-                                                    if (value < 0) return value = 0;
-                                                    if (value > 50) return value = 50;
-
-                                                    handleSubjectChange(sIdx, subIdx, e)
-                                                }}
-                                                required
-                                                type="number"
-                                                className="border-r border-b p-2"
-                                                disabled={sub.theory_marks !== 0 && sub.isSaved}
-                                            />
-
-                                            {sub.grade_point ? (
-                                                <p
-                                                    className="border-r border-b p-2 font-bold"
-                                                >
-                                                    {sub.grade_point}
-                                                </p>
-                                            ) : (
-                                                <button
-                                                    type="button"
-                                                    onClick={() => handleSubGradePoint(sIdx, subIdx)}
-                                                    className="bg-blue-500 text-white px-3 py-1 rounded"
-                                                >
-                                                    Calculate GP
-                                                </button>
-                                            )}
+                                    <div className=''>
+                                        <div className='grid grid-cols-7 bg-green-400'>
+                                            <h1 className=' p-2'>Code</h1>
+                                            <h1 className=' p-2 col-span-3'>Subjects Name</h1>
+                                            <h1 className=' p-2 text-center'>Theory</h1>
+                                            <h1 className=' p-2 text-center'>Practical</h1>
+                                            <h1 className=' p-2 text-center'>Grade</h1>
                                         </div>
-                                    ))}
+                                        {sem.subjects.map((sub, subIdx) => (
+                                            <div key={subIdx} className={`grid grid-cols-7 itemsend ${subIdx % 2 === 0 ? "bg-white" : "bg-gray-100"
+                                                }`}>
+                                                <input
+                                                    name="subject_code"
+                                                    value={sub.subject_code}
+                                                    readOnly
+                                                    className=" p-2 outline-0"
+                                                    required
+                                                />
+                                                <input
+                                                    name="subject_name"
+                                                    value={sub.subject_name}
+                                                    readOnly
+                                                    className=" p-2 col-span-3 outline-0"
+                                                    required
+                                                />
+                                                <input
+                                                    name="theory_marks"
+                                                    value={sub.theory_marks}
+                                                    placeholder='0-100'
+                                                    onChange={(e) => {
+                                                        let value = Number(e.target.value);
+
+                                                        if (value < 0) return value = 0;
+                                                        if (value > 100) return value = 100;
+
+                                                        handleSubjectChange(sIdx, subIdx, e)
+                                                    }}
+                                                    required
+                                                    type="number"
+                                                    className="p-2 text-center"
+                                                    disabled={sub.theory_marks !== 0 && sub.isSaved}
+                                                />
+                                                <input
+                                                    name="practical_marks"
+                                                    value={sub.practical_marks}
+                                                    placeholder='0-50'
+                                                    onChange={(e) => {
+                                                        let value = Number(e.target.value);
+
+                                                        if (value < 0) return value = 0;
+                                                        if (value > 50) return value = 50;
+
+                                                        handleSubjectChange(sIdx, subIdx, e)
+                                                    }}
+                                                    required
+                                                    type="number"
+                                                    className="text-center p-2"
+                                                    disabled={sub.theory_marks !== 0 && sub.isSaved}
+                                                />
+
+                                                {sub.grade_point ? (
+                                                    <p
+                                                        className="text-center p-2 font-bold"
+                                                    >
+                                                        {sub.grade_point}
+                                                    </p>
+                                                ) : (
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => handleSubGradePoint(sIdx, subIdx)}
+                                                        className="bg-sky-500 text-sm text-white p-0 rounded"
+                                                    >
+                                                        Calc GP
+                                                    </button>
+                                                )}
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         );
                     })}
 
 
-                    <button
-                        onClick={handleAddSemester}
-                        className="bg-green-500 text-white px-3 p-2 mr-2 rounded"
-                    >
-                        + Add Semester
-                    </button>
+                    <div className='flex justify-between items-center'>
+                        <button
+                            onClick={handleAddSemester}
+                            className="bg-white py-1 px-2 rounded-lg border border-sky-300"
+                        >
+                            + Add Semester
+                        </button>
 
-                    <button onClick={handleUpdate} className="mr-2 bg-blue-600 text-white p-2 mt-3 rounded">
-                        Update Result
-                    </button>
-
-                    <button onClick={handleCancel} className="bg-red-600 text-white p-2 mt-3 rounded">
-                        Cancel
-                    </button>
+                        <div className='flex gap-2'>
+                            <button onClick={handleCancel} className="bg-red-600 text-white py-1 px-2  rounded-lg">
+                                Cancel
+                            </button>
+                            <button onClick={handleUpdate} className="bg-sky-500 text-white py-1 px-2  rounded-lg">
+                                Result Submit
+                            </button>
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

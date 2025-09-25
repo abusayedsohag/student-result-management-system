@@ -170,38 +170,73 @@ const UploadStudent = () => {
         });
     };
 
+    const handleReset = () => {
+        setStudent({
+            roll: "",
+            student_name: "",
+            father_name: "",
+            mother_name: "",
+            date_of_birth: "",
+            gender: "",
+            registration: "",
+            course_name: "",
+            name_of_industry: "",
+            department: "",
+            regulation: "",
+            session: "",
+        })
+    }
+
 
     return (
-        <div className='w-11/12 mx-auto max-w-5xl'>
-            <div className='py-8'>
-                <h1 className='text-xl md:text-5xl font-black text-center'>Upload Student Information</h1>
+        <div className='mx-auto max-w-3xl mb-10'>
+            <div className='py-8 md:space-y-3 text-center'>
+                <h1 className='text-xl md:text-4xl font-bold'>Upload Student Information</h1>
+                <p className='label text-[10px] md:text-sm'>“Faster Uploads, Smarter Management, Better Results.”</p>
             </div>
-            <form className='w-11/12 mx-auto' onSubmit={handleSubmit}>
-                <div className="grid grid-cols-2 gap-2">
-                    <input name="roll" type='number' value={student.roll}
-                        onChange={(e) => {
-                            const value = e.target.value;
-                            if (/^\d{0,6}$/.test(value)) {
-                                handleTopChange(e);
-                            }
-                        }}
-                        placeholder="Roll"
-                        className="border p-2 bg-gray-900"
-                        required />
-                    <input name="student_name" value={student.student_name}
-                        onChange={handleTopChange} placeholder="Student name" className="border p-2 capitalize bg-gray-900" required />
+            <form className='max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-2xl shadow-sky-300' onSubmit={handleSubmit}>
+                <div className="grid grid-cols-2 gap-y-3 gap-x-5">
+                    <div className='flex flex-col gap-1'>
+                        <p>Roll</p>
+                        <input name="roll" type='number' value={student.roll}
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                if (/^\d{0,6}$/.test(value)) {
+                                    handleTopChange(e);
+                                }
+                            }}
+                            placeholder="Enter Student Roll"
+                            className="border border-gray-200 rounded-lg bg-sky-100 p-2 w-full"
+                            required />
+                    </div>
+                    <div className='flex flex-col gap-1'>
+                        <p>Registration</p>
+                        <input
+                            name="registration"
+                            type='number'
+                            value={student.registration}
+                            required
+                            onChange={(e) => {
+                                const value = e.target.value;
+                                if (/^\d{0,12}$/.test(value)) {
+                                    handleTopChange(e);
+                                }
+                            }}
+                            placeholder="Enter Student Registration"
+                            className="border p-2 border-gray-200 rounded-lg bg-sky-100"
+                        />
+                    </div>
+                    <div className='flex flex-col gap-1'>
+                        <p>Student Name</p>
+                        <input name="student_name" value={student.student_name}
+                            onChange={handleTopChange} placeholder="Enter Student name" className="border border-gray-200 rounded-lg p-2 capitalize bg-sky-100" required />
+                    </div>
 
-                    <input name="father_name" value={student.father_name}
-                        onChange={handleTopChange} placeholder="Father name" className="border p-2 capitalize bg-gray-900" required />
-
-                    <input name="mother_name" value={student.mother_name}
-                        onChange={handleTopChange} placeholder="Mother name" className="border p-2 capitalize bg-gray-900" required />
-
-
-                    <div className='w-full border bg-gray-900'>
+                    <div className='flex flex-col gap-1'>
+                        <p>Date of Birth</p>
                         <DatePicker
                             selected={student.date_of_birth ? new Date(student.date_of_birth) : null}
-                            className="p-2 w-full outline-none "
+                            className="p-2 flex outline-none border w-full border-gray-200 rounded-lg bg-sky-100"
                             showMonthDropdown
                             showYearDropdown
                             dropdownMode="select"
@@ -218,126 +253,148 @@ const UploadStudent = () => {
                         />
                     </div>
 
-                    <select
-                        name="gender"
-                        value={student.gender}
-                        onChange={handleTopChange}
-                        className="border p-2 bg-gray-900"
-                        required
-                    >
-                        <option value="" disabled>Select Gender</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                    </select>
+                    <div className='flex flex-col gap-1'>
+                        <p>Father's Name</p>
+                        <input name="father_name" value={student.father_name}
+                            onChange={handleTopChange} placeholder="Enter Father name" className="border p-2 capitalize border-gray-200 rounded-lg bg-sky-100" required />
+                    </div>
 
-                    <input
-                        name="registration"
-                        type='number'
-                        value={student.registration}
-                        required
-                        onChange={(e) => {
-                            const value = e.target.value;
-                            if (/^\d{0,12}$/.test(value)) {
+                    <div className='flex flex-col gap-1'>
+                        <p>Mother's Name</p>
+                        <input name="mother_name" value={student.mother_name}
+                            onChange={handleTopChange} placeholder="Enter Mother name" className="border p-2 capitalize border-gray-200 rounded-lg bg-sky-100" required />
+                    </div>
+
+
+                    <div className='flex flex-col gap-1'>
+                        <p>Gender</p>
+                        <select
+                            name="gender"
+                            value={student.gender}
+                            onChange={handleTopChange}
+                            className="border p-2 border-gray-200 rounded-lg bg-sky-100"
+                            required
+                        >
+                            <option value="" disabled>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+
+
+                    <div className='flex flex-col gap-1'>
+                        <p>Select Curriculum</p>
+                        <select
+                            name="course_name"
+                            value={student.course_name}
+                            onChange={(e) => {
                                 handleTopChange(e);
+                                handleSelectCourse(e);
+                            }}
+                            className="border p-2 border-gray-200 rounded-lg bg-sky-100"
+                            required
+                        >
+                            <option value="" disabled>Select Curriculum</option>
+                            {
+                                courses?.map((course, idx) =>
+                                    <option key={idx} value={course.course_name}>
+                                        {course.course_name}
+                                    </option>
+                                )
                             }
-                        }}
-                        placeholder="Registration"
-                        className="border p-2 bg-gray-900"
-                    />
+                        </select>
+                    </div>
 
-                    <select
-                        name="course_name"
-                        value={student.course_name}
-                        onChange={(e) => {
-                            handleTopChange(e);
-                            handleSelectCourse(e);
-                        }}
-                        className="border p-2 bg-gray-900"
-                        required
-                    >
-                        <option value="" disabled>Select Course</option>
-                        {
-                            courses?.map((course, idx) =>
-                                <option key={idx} value={course.course_name}>
-                                    {course.course_name}
-                                </option>
-                            )
-                        }
-                    </select>
+                    <div className='flex flex-col gap-1'>
+                        <p>Institute Name</p>
+                        <select
+                            name="name_of_industry"
+                            value={student.name_of_industry}
+                            onChange={handleTopChange}
+                            className="border p-2 border-gray-200 rounded-lg bg-sky-100"
+                            required
+                        >
+                            <option value="" disabled>Select Institute</option>
+                            {
+                                institutes?.map((insti, idx) =>
+                                    <option key={idx} value={insti.name}>
+                                        {insti.name}
+                                    </option>
+                                )
+                            }
+                        </select>
+                    </div>
 
-                    <select
-                        name="name_of_industry"
-                        value={student.name_of_industry}
-                        onChange={handleTopChange}
-                        className="border p-2 bg-gray-900"
-                        required
-                    >
-                        <option value="" disabled>Select Institute</option>
-                        {
-                            institutes?.map((insti, idx) =>
-                                <option key={idx} value={insti.name}>
-                                    {insti.name}
-                                </option>
-                            )
-                        }
-                    </select>
+                    <div className='flex flex-col gap-1'>
+                        <p>Department</p>
+                        <select
+                            name="department"
+                            value={student.department}
+                            onChange={(e) => {
+                                handleTopChange(e);
+                                handleSelectDept(e);
+                            }}
+                            disabled={!selectCourse}
+                            className="border p-2 border-gray-200 rounded-lg bg-sky-100"
+                            required
+                        >
+                            <option value="" disabled>Select Department</option>
+                            {
+                                selectCourse?.map((dept, idx) =>
+                                    <option key={idx} value={dept.name}>
+                                        {dept.name}
+                                    </option>
+                                )
+                            }
+                        </select>
+                    </div>
 
-                    <select
-                        name="department"
-                        value={student.department}
-                        onChange={(e) => {
-                            handleTopChange(e);
-                            handleSelectDept(e);
-                        }}
-                        disabled={!selectCourse}
-                        className="border p-2 bg-gray-900"
-                        required
-                    >
-                        <option value="" disabled>Select Department</option>
-                        {
-                            selectCourse?.map((dept, idx) =>
-                                <option key={idx} value={dept.name}>
-                                    {dept.name}
-                                </option>
-                            )
-                        }
-                    </select>
+                    <div className='flex flex-col gap-1'>
+                        <p>Regulation</p>
+                        <select
+                            name="regulation"
+                            value={student.regulation}
+                            onChange={(e) => {
+                                handleTopChange(e);
+                                handleSelectRegulation(e);
+                            }}
+                            className="border p-2 border-gray-200 rounded-lg bg-sky-100"
+                            required
+                        >
+                            <option value="" disabled>Select Regulation</option>
+                            {
+                                regulations?.map((reg, idx) =>
+                                    <option key={idx} value={reg.regulation}>{reg.regulation}</option>
+                                )
+                            }
+                        </select>
+                    </div>
 
-                    <select
-                        name="regulation"
-                        value={student.regulation}
-                        onChange={(e) => {
-                            handleTopChange(e);
-                            handleSelectRegulation(e);
-                        }}
-                        className="border p-2 bg-gray-900"
-                        required
-                    >
-                        <option value="" disabled>Select Regulation</option>
-                        {
-                            regulations?.map((reg, idx) =>
-                                <option key={idx} value={reg.regulation}>{reg.regulation}</option>
-                            )
-                        }
-                    </select>
+                    <div className='flex flex-col gap-1'>
+                        <p>Session</p>
+                        <select
+                            name="session"
+                            value={student.session}
+                            onChange={handleTopChange}
+                            disabled= {selectRegulation.length > 0}
+                            className="border p-2 border-gray-200 rounded-lg bg-sky-100"
+                            required
+                        >
+                            <option value="" disabled>Select Session</option>
+                            {
+                                selectRegulation?.map((ses, idx) =>
 
-                    <select
-                        name="session"
-                        value={student.session}
-                        onChange={handleTopChange}
-                        className="border p-2 bg-gray-900"
-                        required
-                    >
-                        <option value="" disabled>Select Session</option>
-                        {
-                            selectRegulation?.map((ses, idx) =>
-
-                                <option key={idx} value={ses}>{ses}</option>
-                            )
-                        }
-                    </select>
-
-                    <input className='btn col-span-2' type="submit" value="Upload Student Info" />
+                                    <option key={idx} value={ses}>{ses}</option>
+                                )
+                            }
+                        </select>
+                    </div>
+                    <div></div>
+                    <div className='flex justify-between mt-6'>
+                        <input className='border font-semibold rounded-lg border-sky-300 py-1.5 px-14' type="button" onClick={handleReset} value="Clear" />
+                        <input className='rounded-lg font-semibold text-white bg-sky-500 py-1.5 px-14' type="submit" value="Submit" />
+                    </div>
                 </div>
             </form>
         </div>
