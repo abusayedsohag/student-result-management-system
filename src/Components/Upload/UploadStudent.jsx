@@ -335,7 +335,7 @@ const UploadStudent = () => {
                                 handleTopChange(e);
                                 handleSelectDept(e);
                             }}
-                            disabled={!selectCourse}
+                            disabled={!selectCourse.length > 0}
                             className="border p-2 border-gray-200 rounded-lg bg-sky-100"
                             required
                         >
@@ -377,7 +377,7 @@ const UploadStudent = () => {
                             name="session"
                             value={student.session}
                             onChange={handleTopChange}
-                            disabled= {selectRegulation.length > 0}
+                            disabled= {!selectRegulation.length > 0}
                             className="border p-2 border-gray-200 rounded-lg bg-sky-100"
                             required
                         >
