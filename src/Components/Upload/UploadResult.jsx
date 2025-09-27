@@ -30,9 +30,13 @@ const UploadResult = () => {
         if (findRoll) {
             const findCors = findRoll.course_name;
             const findDept = findRoll.department;
+            const findregus = findRoll.regulation;
             const findCor = courses.find(data => data.course_name === findCors);
             const dept = findCor.departments.find(data => data.name === findDept);
-            const semesters = dept.semesters;
+            const regu = dept.regulation.find(dt => dt.year === findregus)
+            const semesters = regu.semesters;
+
+            console.log(semesters)
 
             const studentWithFlags = {
                 ...findRoll,

@@ -23,7 +23,9 @@ const Form = () => {
 
     useEffect(() => {
         fetchCourses()
-            .then(res => setCourseInfo(res.data))
+            .then((res) => {
+                setCourseInfo(res.data)
+            })
     }, [])
 
     useEffect(() => {
