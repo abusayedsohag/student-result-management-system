@@ -19,6 +19,7 @@ const Navbar = () => {
             </li>
             <li><Link to={'/upload-student-info'}>Upload Student Info</Link></li>
             <li><Link to={'/upload-result-info'}>Upload Result Info</Link></li>
+            <li><Link to={'/book-list'}>Booklist</Link></li>
         </>
 
 

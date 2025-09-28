@@ -11,6 +11,7 @@ import UploadResult from "../Components/Upload/UploadResult";
 import Dashboard from "../Components/Dashboard/Dashboard";
 import Students from "../Components/Dashboard/Students";
 import Analize from "../Components/Dashboard/Analize";
+import Booklist from "../Components/Lists/Booklist";
 
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 element: <Login></Login>,
+            },
+            {
+                path: "/book-list",
+                element: <Booklist></Booklist>,
             },
             {
                 path: '/upload-student-info',
