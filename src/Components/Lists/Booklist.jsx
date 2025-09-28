@@ -41,7 +41,7 @@ const Booklist = () => {
                             <h1 className='text-2xl font-semibold my-4 p-2 text-center bg-red-400'>
                                 {data.course_name} - 2022
                             </h1>
-                            <div className='grid grid-cols-2 gap-4'>
+                            <div className='grid md:grid-cols-2 xl:grid-cols-3 gap-4'>
                                 {
                                     depts[sIdx]?.map(dept => (
                                         <motion.button

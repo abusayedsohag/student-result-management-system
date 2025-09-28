@@ -14,7 +14,7 @@ const DeptBookList = () => {
     }, [deptname])
 
     return (
-        <div className='w-11/12 mx-auto my-10'>
+        <div className='max-w-3xl mx-auto my-10'>
             <div>
                 {
                     depts?.map((dt, sIDx) => (
