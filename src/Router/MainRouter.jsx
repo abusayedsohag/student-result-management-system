@@ -12,6 +12,7 @@ import Dashboard from "../Components/Dashboard/Dashboard";
 import Students from "../Components/Dashboard/Students";
 import Analize from "../Components/Dashboard/Analize";
 import Booklist from "../Components/Lists/Booklist";
+import DeptBookList from "../Components/Lists/DeptBookList";
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
             {
                 path: "/book-list",
                 element: <Booklist></Booklist>,
+            },
+            {
+                path: "/book-list/:deptname",
+                element: <DeptBookList></DeptBookList>,
             },
             {
                 path: '/upload-student-info',

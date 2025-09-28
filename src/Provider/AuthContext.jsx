@@ -36,7 +36,8 @@ const AuthContext = ({ children }) => {
         user,
         loader,
         signIn,
-        signOutme
+        signOutme,
+        setLoader
     }
 
 

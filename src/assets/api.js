@@ -13,5 +13,7 @@ export const fetchStudent = (roll) => API.get(`/students/${roll}`);
 
 export const fetchCourses = () => API.get('/courses');
 export const fetchCourse = (coursename) => API.get(`/courses/${coursename}`);
+export const fetchDept = (deptname) => API.get(`/courses/departments/${deptname}`);
+
 
 export const fetchInstitutes = () => API.get('/institutes');
